@@ -1,0 +1,21 @@
+PODS:
+  - Alamofire (4.4.0)
+  - KeychainAccess (3.0.1)
+  - Macaw (0.8.0):
+    - SWXMLHash (~> 3.0.0)
+  - SWXMLHash (3.0.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - KeychainAccess
+  - Macaw
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  KeychainAccess: 017ea25e313a49eda10bb19b0bb0760fb1edfe1a
+  Macaw: 3b0c327e285fb57c7f6fbfe101bfc486f2415de3
+  SWXMLHash: 29d20b84692fc319ea8ed933058fe7d8d005139b
+
+PODFILE CHECKSUM: b3266992302cec32b4a73ba8b89815c34fee04a2
+
+COCOAPODS: 1.2.1
