@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/gpg,swift,xcode,fastlane
 
+### Codesigning/Provisioning ###
+codesigndoc_exports/
+
 ### fastlane ###
 # fastlane - A streamlined workflow tool for Cocoa deployment
 
