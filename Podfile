@@ -6,9 +6,12 @@ target 'TimeLogger' do
   use_frameworks!
 
   # Pods for TimeLogger
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxAlamofire'
   pod 'Alamofire'
-  pod 'Macaw'
   pod 'KeychainAccess'
+  pod 'SwiftyJSON'
 
   target 'TimeLoggerTests' do
     inherit! :search_paths

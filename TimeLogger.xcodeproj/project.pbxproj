@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB6F021EB8144000FF1B24 /* AppDelegate.swift */; };
 		06DB6F081EB8144000FF1B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F061EB8144000FF1B24 /* Main.storyboard */; };
-		06DB6F0B1EB8144000FF1B24 /* TimeLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 06DB6F091EB8144000FF1B24 /* TimeLogger.xcdatamodeld */; };
 		06DB6F0D1EB8144000FF1B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F0C1EB8144000FF1B24 /* Assets.xcassets */; };
 		06DB6F101EB8144000FF1B24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */; };
-		06DB6F1B1EB8144000FF1B24 /* TimeLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB6F1A1EB8144000FF1B24 /* TimeLoggerTests.swift */; };
 		21D8754296CBA49ECF395BBF /* Pods_TimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B27567B34860473B11B0DB9 /* Pods_TimeLogger.framework */; };
 		C7208AC4D7F19AD46ACB5D61 /* Pods_TimeLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB3B0B7249559036BFDA765 /* Pods_TimeLoggerTests.framework */; };
 /* End PBXBuildFile section */
@@ -31,12 +29,10 @@
 		06DB6EFF1EB8144000FF1B24 /* TimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DB6F021EB8144000FF1B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DB6F071EB8144000FF1B24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		06DB6F0A1EB8144000FF1B24 /* TimeLogger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimeLogger.xcdatamodel; sourceTree = "<group>"; };
 		06DB6F0C1EB8144000FF1B24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06DB6F0F1EB8144000FF1B24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06DB6F111EB8144000FF1B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06DB6F161EB8144000FF1B24 /* TimeLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		06DB6F1A1EB8144000FF1B24 /* TimeLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLoggerTests.swift; sourceTree = "<group>"; };
 		06DB6F1C1EB8144000FF1B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B27567B34860473B11B0DB9 /* Pods_TimeLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB3B0B7249559036BFDA765 /* Pods_TimeLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +73,22 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		069055E31EBDB5A80043C084 /* Views + Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				06DB6F061EB8144000FF1B24 /* Main.storyboard */,
+				06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */,
+			);
+			name = "Views + Controllers";
+			sourceTree = "<group>";
+		};
+		069055E91EBDB7EC0043C084 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		06DB6EF61EB8144000FF1B24 = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +112,11 @@
 		06DB6F011EB8144000FF1B24 /* TimeLogger */ = {
 			isa = PBXGroup;
 			children = (
+				069055E91EBDB7EC0043C084 /* Model */,
 				06DB6F021EB8144000FF1B24 /* AppDelegate.swift */,
-				06DB6F061EB8144000FF1B24 /* Main.storyboard */,
+				069055E31EBDB5A80043C084 /* Views + Controllers */,
 				06DB6F0C1EB8144000FF1B24 /* Assets.xcassets */,
-				06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */,
 				06DB6F111EB8144000FF1B24 /* Info.plist */,
-				06DB6F091EB8144000FF1B24 /* TimeLogger.xcdatamodeld */,
 			);
 			path = TimeLogger;
 			sourceTree = "<group>";
@@ -113,7 +124,6 @@
 		06DB6F191EB8144000FF1B24 /* TimeLoggerTests */ = {
 			isa = PBXGroup;
 			children = (
-				06DB6F1A1EB8144000FF1B24 /* TimeLoggerTests.swift */,
 				06DB6F1C1EB8144000FF1B24 /* Info.plist */,
 			);
 			path = TimeLoggerTests;
@@ -333,7 +343,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */,
-				06DB6F0B1EB8144000FF1B24 /* TimeLogger.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +350,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06DB6F1B1EB8144000FF1B24 /* TimeLoggerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,19 +569,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		06DB6F091EB8144000FF1B24 /* TimeLogger.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				06DB6F0A1EB8144000FF1B24 /* TimeLogger.xcdatamodel */,
-			);
-			currentVersion = 06DB6F0A1EB8144000FF1B24 /* TimeLogger.xcdatamodel */;
-			path = TimeLogger.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 06DB6EF71EB8144000FF1B24 /* Project object */;
 }
