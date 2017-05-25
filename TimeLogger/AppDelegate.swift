@@ -12,12 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
-//  lazy var coreDataStack = CoreDataStack(modelName: "TimeLogger")
+  var navigationService = NavigationService()  
   
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-
+    let rootVC = navigationService.rootViewController()
+    
+    window?.rootViewController = rootVC
+    
+    window?.makeKeyAndVisible()
     
     return true
   }

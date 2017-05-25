@@ -37,8 +37,8 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7S-ar-Mjh">
-                                <rect key="frame" x="140.5" y="215" width="39.5" height="19.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                <rect key="frame" x="145" y="215" width="31" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.59808433219178081" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -66,31 +66,38 @@
                                 <color key="textColor" white="1" alpha="0.84460616440000003" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="E4u-P2-UfM">
+                                <rect key="frame" x="142" y="415" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="k7S-ar-Mjh" firstAttribute="centerX" secondItem="cdB-i9-q3f" secondAttribute="centerX" id="3AO-z7-Kib"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mcz-tp-p53" secondAttribute="trailing" constant="24" id="3Aw-uk-eWP"/>
                             <constraint firstItem="7fP-HT-93P" firstAttribute="top" secondItem="mcz-tp-p53" secondAttribute="bottom" constant="50" id="3fv-3J-pKd"/>
+                            <constraint firstItem="mcz-tp-p53" firstAttribute="top" relation="greaterThanOrEqual" secondItem="k7S-ar-Mjh" secondAttribute="bottom" constant="10" id="6on-6Z-2SM"/>
                             <constraint firstItem="Jbv-se-Yyy" firstAttribute="top" secondItem="cdB-i9-q3f" secondAttribute="top" constant="100" id="CcX-lh-3Nb"/>
+                            <constraint firstItem="E4u-P2-UfM" firstAttribute="centerX" secondItem="cdB-i9-q3f" secondAttribute="centerX" id="GEw-bh-JCh"/>
                             <constraint firstItem="k7S-ar-Mjh" firstAttribute="top" secondItem="Jbv-se-Yyy" secondAttribute="bottom" constant="30" id="GTb-ES-y0r"/>
                             <constraint firstItem="mcz-tp-p53" firstAttribute="leading" secondItem="cdB-i9-q3f" secondAttribute="leadingMargin" constant="24" id="Gxu-0h-CDw"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k7S-ar-Mjh" secondAttribute="trailing" constant="60" id="K0Z-bR-Bgb"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Jbv-se-Yyy" secondAttribute="trailing" constant="60" id="LOh-Sg-Spa"/>
                             <constraint firstItem="aUt-aT-nhR" firstAttribute="top" secondItem="711-um-DwD" secondAttribute="bottom" constant="20" id="LnN-Ft-ahP"/>
                             <constraint firstItem="7fP-HT-93P" firstAttribute="leading" secondItem="cdB-i9-q3f" secondAttribute="leadingMargin" constant="75" id="Vbq-KW-IhJ"/>
+                            <constraint firstItem="711-um-DwD" firstAttribute="top" secondItem="E4u-P2-UfM" secondAttribute="bottom" constant="69.5" id="WRr-Ca-9qq"/>
                             <constraint firstItem="Jbv-se-Yyy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cdB-i9-q3f" secondAttribute="leading" constant="60" id="auI-yg-hj3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7fP-HT-93P" secondAttribute="trailing" constant="75" id="fJr-Dq-OIy"/>
                             <constraint firstAttribute="trailing" secondItem="711-um-DwD" secondAttribute="trailing" constant="30" id="gw9-SM-y8c"/>
+                            <constraint firstItem="E4u-P2-UfM" firstAttribute="top" secondItem="7fP-HT-93P" secondAttribute="bottom" constant="51" id="j7J-lN-2qF"/>
                             <constraint firstItem="k7S-ar-Mjh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cdB-i9-q3f" secondAttribute="leading" constant="60" id="nsR-0L-03M"/>
                             <constraint firstItem="711-um-DwD" firstAttribute="leading" secondItem="cdB-i9-q3f" secondAttribute="leading" constant="30" id="qEv-61-Czw"/>
-                            <constraint firstItem="mcz-tp-p53" firstAttribute="top" secondItem="k7S-ar-Mjh" secondAttribute="bottom" constant="20" id="qZW-v7-7cm"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="apiKeyTextField" destination="mcz-tp-p53" id="wy5-4L-CiN"/>
-                        <outlet property="loginButton" destination="7fP-HT-93P" id="eas-4M-amm"/>
-                        <outlet property="statusLabel" destination="k7S-ar-Mjh" id="Bcz-ZU-fcQ"/>
+                        <outlet property="activityIndicator" destination="E4u-P2-UfM" id="eBL-Ma-jZv"/>
+                        <outlet property="keyTextField" destination="mcz-tp-p53" id="s7g-9R-3jx"/>
+                        <outlet property="loginButton" destination="7fP-HT-93P" id="O7H-yN-9bp"/>
+                        <outlet property="statusLabel" destination="k7S-ar-Mjh" id="JnN-ev-rbq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qtX-Ir-8fV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -100,7 +107,7 @@
         <!--Item-->
         <scene sceneID="oNI-8C-S2z">
             <objects>
-                <viewController id="3no-Ht-ZY6" customClass="RootViewController" customModule="TimeLogger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3no-Ht-ZY6" customClass="SuccessfulLoginViewController" customModule="TimeLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HmO-6R-ENb"/>
                         <viewControllerLayoutGuide type="bottom" id="mkf-E3-ZlG"/>
@@ -112,6 +119,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TabBar Root Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKj-Vp-Z2f">
                                 <rect key="frame" x="73" y="274" width="174" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Successfully Logged in!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDd-Ol-ZzB">
+                                <rect key="frame" x="65" y="205" width="190" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

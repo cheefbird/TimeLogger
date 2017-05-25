@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060AFB0B1ED50C5F0088D3B8 /* NavigationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060AFB0A1ED50C5F0088D3B8 /* NavigationService.swift */; };
+		060AFB0E1ED50CA70088D3B8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060AFB0D1ED50CA70088D3B8 /* LoginViewModel.swift */; };
+		060AFB111ED50E380088D3B8 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060AFB101ED50E380088D3B8 /* AuthenticationService.swift */; };
+		060AFB141ED51BA10088D3B8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060AFB131ED51BA10088D3B8 /* LoginViewController.swift */; };
+		060AFB161ED5650F0088D3B8 /* TeamworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060AFB151ED5650F0088D3B8 /* TeamworkRouter.swift */; };
+		06B06FEF1ED6944300375429 /* TeamworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B06FEE1ED6944300375429 /* TeamworkError.swift */; };
+		06B06FF11ED6A00A00375429 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B06FF01ED6A00A00375429 /* APIKey.swift */; };
+		06B06FF31ED6AA0400375429 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B06FF21ED6AA0400375429 /* User.swift */; };
+		06B06FF61ED6B19F00375429 /* SuccessfulLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B06FF51ED6B19F00375429 /* SuccessfulLoginViewController.swift */; };
 		06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB6F021EB8144000FF1B24 /* AppDelegate.swift */; };
 		06DB6F081EB8144000FF1B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F061EB8144000FF1B24 /* Main.storyboard */; };
 		06DB6F0D1EB8144000FF1B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F0C1EB8144000FF1B24 /* Assets.xcassets */; };
@@ -26,6 +35,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		060AFB0A1ED50C5F0088D3B8 /* NavigationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationService.swift; path = Services/NavigationService.swift; sourceTree = "<group>"; };
+		060AFB0D1ED50CA70088D3B8 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		060AFB101ED50E380088D3B8 /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationService.swift; path = Services/AuthenticationService.swift; sourceTree = "<group>"; };
+		060AFB131ED51BA10088D3B8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = View/LoginViewController.swift; sourceTree = "<group>"; };
+		060AFB151ED5650F0088D3B8 /* TeamworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamworkRouter.swift; path = TeamworkAPI/TeamworkRouter.swift; sourceTree = "<group>"; };
+		06B06FEE1ED6944300375429 /* TeamworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamworkError.swift; sourceTree = "<group>"; };
+		06B06FF01ED6A00A00375429 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		06B06FF21ED6AA0400375429 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		06B06FF51ED6B19F00375429 /* SuccessfulLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessfulLoginViewController.swift; sourceTree = "<group>"; };
 		06DB6EFF1EB8144000FF1B24 /* TimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DB6F021EB8144000FF1B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DB6F071EB8144000FF1B24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,20 +91,66 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		069055E31EBDB5A80043C084 /* Views + Controllers */ = {
+		060AFB0C1ED50C630088D3B8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				060AFB0A1ED50C5F0088D3B8 /* NavigationService.swift */,
+				060AFB101ED50E380088D3B8 /* AuthenticationService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		060AFB0F1ED50CAB0088D3B8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				060AFB0D1ED50CA70088D3B8 /* LoginViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		060AFB121ED51B800088D3B8 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				06DB6F061EB8144000FF1B24 /* Main.storyboard */,
 				06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */,
 			);
-			name = "Views + Controllers";
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		069055E31EBDB5A80043C084 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				060AFB121ED51B800088D3B8 /* Storyboard */,
+				06B06FF41ED6B13B00375429 /* View Controllers */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		069055E91EBDB7EC0043C084 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				06B06FF21ED6AA0400375429 /* User.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		06B06FED1ED6942000375429 /* TeamworkAPI */ = {
+			isa = PBXGroup;
+			children = (
+				060AFB151ED5650F0088D3B8 /* TeamworkRouter.swift */,
+				06B06FEE1ED6944300375429 /* TeamworkError.swift */,
+				06B06FF01ED6A00A00375429 /* APIKey.swift */,
+			);
+			name = TeamworkAPI;
+			sourceTree = "<group>";
+		};
+		06B06FF41ED6B13B00375429 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				060AFB131ED51BA10088D3B8 /* LoginViewController.swift */,
+				06B06FF51ED6B19F00375429 /* SuccessfulLoginViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		06DB6EF61EB8144000FF1B24 = {
@@ -112,9 +176,12 @@
 		06DB6F011EB8144000FF1B24 /* TimeLogger */ = {
 			isa = PBXGroup;
 			children = (
+				06B06FED1ED6942000375429 /* TeamworkAPI */,
+				060AFB0C1ED50C630088D3B8 /* Services */,
+				060AFB0F1ED50CAB0088D3B8 /* ViewModel */,
 				069055E91EBDB7EC0043C084 /* Model */,
 				06DB6F021EB8144000FF1B24 /* AppDelegate.swift */,
-				069055E31EBDB5A80043C084 /* Views + Controllers */,
+				069055E31EBDB5A80043C084 /* View */,
 				06DB6F0C1EB8144000FF1B24 /* Assets.xcassets */,
 				06DB6F111EB8144000FF1B24 /* Info.plist */,
 			);
@@ -342,7 +409,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				060AFB161ED5650F0088D3B8 /* TeamworkRouter.swift in Sources */,
 				06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */,
+				060AFB0B1ED50C5F0088D3B8 /* NavigationService.swift in Sources */,
+				060AFB0E1ED50CA70088D3B8 /* LoginViewModel.swift in Sources */,
+				06B06FF61ED6B19F00375429 /* SuccessfulLoginViewController.swift in Sources */,
+				06B06FF11ED6A00A00375429 /* APIKey.swift in Sources */,
+				06B06FF31ED6AA0400375429 /* User.swift in Sources */,
+				060AFB141ED51BA10088D3B8 /* LoginViewController.swift in Sources */,
+				060AFB111ED50E380088D3B8 /* AuthenticationService.swift in Sources */,
+				06B06FEF1ED6944300375429 /* TeamworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
