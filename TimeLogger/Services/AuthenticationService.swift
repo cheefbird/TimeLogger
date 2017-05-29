@@ -30,9 +30,11 @@ class AuthenticationService {
   // MARK: - Public Methods
   func authenticate(usingAPIKey key: String, completion: @escaping (Result<Bool>) -> Void) {
     
-    Alamofire.request(TeamworkRouter.authenticate(key)).responseJSON { response in
+    Alamofire.request(TeamworkRouter.authenticate(key))
+      .validate()
+      .responseJSON { response in
       
-      let result = self.handleAuthenticationResponse(using: response)
+      let result = self.handleAuthenticationResponse(using: response, andKey: key)
       
       completion(result)
       
@@ -41,7 +43,7 @@ class AuthenticationService {
   }
   
   // MARK: - Private Methods
-  private func handleAuthenticationResponse(using response: DataResponse<Any>) -> Result<Bool> {
+  private func handleAuthenticationResponse(using response: DataResponse<Any>, andKey key: String) -> Result<Bool> {
     
     guard response.result.error == nil else {
       print("Error received while attempting authentication: \(response.result.error!)")
@@ -58,7 +60,8 @@ class AuthenticationService {
         apiKey.isValid = false
         return .failure(TeamworkError.responseSerializationError(reason: "Response's STATUS was not OK, response has failed"))
     }
-    
+    apiKey.value = key
+    apiKey.isValid = true
     return .success(true)
     
   }

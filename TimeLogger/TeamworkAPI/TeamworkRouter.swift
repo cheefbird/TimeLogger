@@ -83,7 +83,9 @@ enum TeamworkRouter: URLRequestConvertible {
       throw TeamworkError.routingError(reason: "Error converting baseURL to URL")
     }
     
-    var urlRequest = URLRequest(url: url)
+    let fullURL = url.appendingPathComponent(relativePath)
+    
+    var urlRequest = URLRequest(url: fullURL)
     urlRequest.httpMethod = method.rawValue
     
     for (key, value) in headers {
@@ -92,7 +94,7 @@ enum TeamworkRouter: URLRequestConvertible {
     
     let encoding = URLEncoding.default
     
-    return try encoding.encode(urlRequest, with: parameters)
+    return try encoding.encode(urlRequest, with: nil)
   }
   
 }
@@ -106,8 +108,10 @@ extension TeamworkRouter {
       throw TeamworkError.keyEncoderError(reason: "Cannot encode an empty key")
     }
     
+    let keyWithPassword = key.appending(":fuckthisjob")
+    
     var encodedResult: String
-    let keyAsData = key.data(using: .utf8)
+    let keyAsData = keyWithPassword.data(using: .utf8)
     
     if let encodedKey = keyAsData?.base64EncodedString() {
       encodedResult = encodedKey

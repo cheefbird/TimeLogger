@@ -59,6 +59,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="authenticate" destination="8Fs-pR-oK1" eventType="touchUpInside" id="jo6-tt-IXz"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Teamwork API Key is required to use this app. Login to your account to get yours." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="711-um-DwD">
                                 <rect key="frame" x="30" y="521.5" width="260" height="26.5"/>
@@ -96,7 +99,6 @@
                     <connections>
                         <outlet property="activityIndicator" destination="E4u-P2-UfM" id="eBL-Ma-jZv"/>
                         <outlet property="keyTextField" destination="mcz-tp-p53" id="s7g-9R-3jx"/>
-                        <outlet property="loginButton" destination="7fP-HT-93P" id="O7H-yN-9bp"/>
                         <outlet property="statusLabel" destination="k7S-ar-Mjh" id="JnN-ev-rbq"/>
                     </connections>
                 </viewController>
