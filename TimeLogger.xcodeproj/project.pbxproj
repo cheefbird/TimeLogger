@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		065334A21EE3FE68009A14B5 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065334A11EE3FE68009A14B5 /* APIKey.swift */; };
+		065334A41EE4092B009A14B5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065334A31EE4092B009A14B5 /* LoadingViewController.swift */; };
 		066932841EDBE62600E09963 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066932831EDBE62600E09963 /* LoginViewController.swift */; };
 		066932891EDBEDB300E09963 /* TeamworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066932881EDBEDB300E09963 /* TeamworkRouter.swift */; };
 		0669328B1EDBEDD000E09963 /* TeamworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669328A1EDBEDD000E09963 /* TeamworkError.swift */; };
 		0669328E1EDCDE9800E09963 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669328D1EDCDE9800E09963 /* AuthenticationService.swift */; };
+		066932901EDCDFE500E09963 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669328F1EDCDFE500E09963 /* CoreDataStack.swift */; };
+		069427C31EE2893F00FB933F /* AuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069427C21EE2893F00FB933F /* AuthenticationServiceTests.swift */; };
+		069427C61EE2A1B000FB933F /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069427C51EE2A1B000FB933F /* ProjectsViewController.swift */; };
 		06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB6F021EB8144000FF1B24 /* AppDelegate.swift */; };
 		06DB6F081EB8144000FF1B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F061EB8144000FF1B24 /* Main.storyboard */; };
 		06DB6F0D1EB8144000FF1B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F0C1EB8144000FF1B24 /* Assets.xcassets */; };
 		06DB6F101EB8144000FF1B24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */; };
+		06E7CA1A1EE1466D000114C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7CA191EE1466D000114C4 /* User.swift */; };
 		21D8754296CBA49ECF395BBF /* Pods_TimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B27567B34860473B11B0DB9 /* Pods_TimeLogger.framework */; };
 		C7208AC4D7F19AD46ACB5D61 /* Pods_TimeLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB3B0B7249559036BFDA765 /* Pods_TimeLoggerTests.framework */; };
 /* End PBXBuildFile section */
@@ -30,10 +36,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		065334A11EE3FE68009A14B5 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		065334A31EE4092B009A14B5 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		066932831EDBE62600E09963 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		066932881EDBEDB300E09963 /* TeamworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamworkRouter.swift; path = TeamworkAPI/TeamworkRouter.swift; sourceTree = "<group>"; };
 		0669328A1EDBEDD000E09963 /* TeamworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamworkError.swift; path = TeamworkAPI/TeamworkError.swift; sourceTree = "<group>"; };
 		0669328D1EDCDE9800E09963 /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationService.swift; path = Services/AuthenticationService.swift; sourceTree = "<group>"; };
+		0669328F1EDCDFE500E09963 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = Services/CoreDataStack.swift; sourceTree = "<group>"; };
+		069427C21EE2893F00FB933F /* AuthenticationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationServiceTests.swift; path = Services/AuthenticationServiceTests.swift; sourceTree = "<group>"; };
+		069427C51EE2A1B000FB933F /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		06DB6EFF1EB8144000FF1B24 /* TimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DB6F021EB8144000FF1B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DB6F071EB8144000FF1B24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -42,6 +53,7 @@
 		06DB6F111EB8144000FF1B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06DB6F161EB8144000FF1B24 /* TimeLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DB6F1C1EB8144000FF1B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06E7CA191EE1466D000114C4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0B27567B34860473B11B0DB9 /* Pods_TimeLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB3B0B7249559036BFDA765 /* Pods_TimeLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40DD327B6D8B655DD215394C /* Pods-TimeLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +93,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		065334A71EE41256009A14B5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		066932871EDBED5700E09963 /* TeamworkAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,25 +113,45 @@
 			isa = PBXGroup;
 			children = (
 				0669328D1EDCDE9800E09963 /* AuthenticationService.swift */,
+				0669328F1EDCDFE500E09963 /* CoreDataStack.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
 		};
-		069055E31EBDB5A80043C084 /* Views + Controllers */ = {
+		069055E31EBDB5A80043C084 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				065334A31EE4092B009A14B5 /* LoadingViewController.swift */,
+				066932831EDBE62600E09963 /* LoginViewController.swift */,
+				069427C51EE2A1B000FB933F /* ProjectsViewController.swift */,
 				06DB6F061EB8144000FF1B24 /* Main.storyboard */,
 				06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */,
-				066932831EDBE62600E09963 /* LoginViewController.swift */,
 			);
-			name = "Views + Controllers";
+			name = View;
 			sourceTree = "<group>";
 		};
 		069055E91EBDB7EC0043C084 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				06E7CA191EE1466D000114C4 /* User.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		069427C11EE2820200FB933F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				065334A11EE3FE68009A14B5 /* APIKey.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		069427C41EE2894300FB933F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				069427C21EE2893F00FB933F /* AuthenticationServiceTests.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		06DB6EF61EB8144000FF1B24 = {
@@ -138,13 +177,15 @@
 		06DB6F011EB8144000FF1B24 /* TimeLogger */ = {
 			isa = PBXGroup;
 			children = (
+				069427C11EE2820200FB933F /* Protocol */,
 				0669328C1EDCDE7800E09963 /* Services */,
 				069055E91EBDB7EC0043C084 /* Model */,
 				06DB6F021EB8144000FF1B24 /* AppDelegate.swift */,
-				069055E31EBDB5A80043C084 /* Views + Controllers */,
+				069055E31EBDB5A80043C084 /* View */,
 				06DB6F0C1EB8144000FF1B24 /* Assets.xcassets */,
 				06DB6F111EB8144000FF1B24 /* Info.plist */,
 				066932871EDBED5700E09963 /* TeamworkAPI */,
+				065334A71EE41256009A14B5 /* Helper */,
 			);
 			path = TimeLogger;
 			sourceTree = "<group>";
@@ -152,6 +193,7 @@
 		06DB6F191EB8144000FF1B24 /* TimeLoggerTests */ = {
 			isa = PBXGroup;
 			children = (
+				069427C41EE2894300FB933F /* Services */,
 				06DB6F1C1EB8144000FF1B24 /* Info.plist */,
 			);
 			path = TimeLoggerTests;
@@ -228,6 +270,7 @@
 					06DB6F151EB8144000FF1B24 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = WA3KPNE52J;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 06DB6EFE1EB8144000FF1B24;
 					};
@@ -370,10 +413,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06E7CA1A1EE1466D000114C4 /* User.swift in Sources */,
 				066932891EDBEDB300E09963 /* TeamworkRouter.swift in Sources */,
 				066932841EDBE62600E09963 /* LoginViewController.swift in Sources */,
+				069427C61EE2A1B000FB933F /* ProjectsViewController.swift in Sources */,
 				0669328B1EDBEDD000E09963 /* TeamworkError.swift in Sources */,
+				066932901EDCDFE500E09963 /* CoreDataStack.swift in Sources */,
 				06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */,
+				065334A41EE4092B009A14B5 /* LoadingViewController.swift in Sources */,
+				065334A21EE3FE68009A14B5 /* APIKey.swift in Sources */,
 				0669328E1EDCDE9800E09963 /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				069427C31EE2893F00FB933F /* AuthenticationServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,11 +593,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WA3KPNE52J;
 				INFOPLIST_FILE = TimeLoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.fbreidenbach.TimeLoggerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TimeLogger.app/TimeLogger";
 			};
@@ -560,6 +611,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = WA3KPNE52J;
 				INFOPLIST_FILE = TimeLoggerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

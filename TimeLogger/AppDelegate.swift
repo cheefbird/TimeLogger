@@ -7,21 +7,27 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
-//  lazy var coreDataStack = CoreDataStack(modelName: "TimeLogger")
-  
+  var authenticationService: AuthenticationService!
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
+    authenticationService = AuthenticationService()
     
+    guard let loadingViewController = window?.rootViewController as? LoadingViewController else {
+      return true
+    }
+    
+    loadingViewController.authenticationService = authenticationService
+    loadingViewController.delegate = self
     
     return true
   }
-
   
 }
 
