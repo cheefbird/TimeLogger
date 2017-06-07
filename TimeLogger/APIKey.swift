@@ -1,57 +1,31 @@
+////
+////  APIKey.swift
+////  TimeLogger
+////
+////  Created by Francis Breidenbach on 6/4/17.
+////  Copyright © 2017 Francis Breidenbach. All rights reserved.
+////
 //
-//  TeamworkAPIKey.swift
-//  TimeLogger
+//import Foundation
+//import KeychainAccess
 //
-//  Created by Francis Breidenbach on 5/24/17.
-//  Copyright © 2017 Francis Breidenbach. All rights reserved.
+//protocol APIKey {
+//  
+//  var apiKey: String { get }
+//  var isValid: Bool { get set }
+//  
+//  func setKey(key: String)
+//  func deleteKey()
+//  
+//}
 //
-
-import Foundation
-import KeychainAccess
-
-struct APIKey {
-  
-  fileprivate let keychain = Keychain(service: "com.fbreidenbach.TimeLogger")
-  fileprivate let keyName = "APIKey"
-  fileprivate let authStatusName = "KeyIsAuthentic"
-  
-  var value: String {
-    
-    get {
-      guard let key = try? keychain.getString(keyName) else {
-        return ""
-      }
-      return key!
-    }
-    
-    set {
-      do {
-        try keychain.set(newValue, key: keyName)
-      } catch let error as Error {
-        print("Error setting APIKey.value: \(error.localizedDescription)\n Full error: \(error)")
-      }
-    }
-    
-  }
-  
-  var isValid: Bool {
-    
-    get {
-      
-      return UserDefaults.standard.bool(forKey: authStatusName)
-      
-    }
-    set {
-      UserDefaults.standard.set(newValue, forKey: authStatusName)
-    }
-    
-  }
-  
-}
-
-
-
-
-
-
-
+//
+//extension APIKey {
+//  
+//  func setKey(to key: String) {
+//    
+//    
+//    
+//  }
+//  
+//}

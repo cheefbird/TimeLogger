@@ -1,26 +1,47 @@
 //
-//  User.swift
+//  TeamworkKey.swift
 //  TimeLogger
 //
-//  Created by Francis Breidenbach on 5/24/17.
+//  Created by Francis Breidenbach on 6/2/17.
 //  Copyright © 2017 Francis Breidenbach. All rights reserved.
 //
 
 import Foundation
+import RealmSwift
+import SwiftyJSON
 
-
-class User {
+class User: Object {
   
-  let firstName: String
-  let lastName: String
-  let id: String
-  var isAdmin: Bool
+  // MARK: - Properties
+  dynamic var firstName = ""
+  dynamic var lastName = ""
+  dynamic var id = 0
+  dynamic var isAdmin = false
+  dynamic var url = ""
   
-  init(first: String, last: String, id: String, admin: Bool) {
-    self.firstName = first
-    self.lastName = last
-    self.id = id
-    self.isAdmin = admin
+  
+  // MARK: - Init
+  
+  convenience init(fromJSON json: JSON) {
+    self.init()
+    
+    let userID = json["userId"].stringValue
+    guard let numberID = Int(userID) else { return }
+    
+    id = numberID
+    firstName = json["firstname"].stringValue
+    lastName = json["lastname"].stringValue
+    isAdmin = json["userIsAdmin"].boolValue
+    url = json["URL"].stringValue
+    
+  }
+  
+  
+  // MARK: - Meta
+  override static func primaryKey() -> String? {
+    return "id"
   }
   
 }
+
+

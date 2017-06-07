@@ -5,7 +5,6 @@
 //  Created by Francis Breidenbach on 5/23/17.
 //  Copyright © 2017 Francis Breidenbach. All rights reserved.
 //
-
 import Foundation
 import Alamofire
 
@@ -121,12 +120,4 @@ extension TeamworkRouter {
     }
   }
 }
-
-
-
-
-
-
-
-
 

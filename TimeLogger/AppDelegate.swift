@@ -7,25 +7,27 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
-  var navigationService = NavigationService()  
-  
+  var authenticationService: AuthenticationService!
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-    let rootVC = navigationService.rootViewController()
+    authenticationService = AuthenticationService()
     
-    window?.rootViewController = rootVC
+    guard let loadingViewController = window?.rootViewController as? LoadingViewController else {
+      return true
+    }
     
-    window?.makeKeyAndVisible()
+    loadingViewController.authenticationService = authenticationService
+    loadingViewController.delegate = self
     
     return true
   }
-
   
 }
 
