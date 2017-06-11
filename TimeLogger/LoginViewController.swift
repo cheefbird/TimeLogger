@@ -22,7 +22,6 @@ class LoginViewController: UIViewController {
   // MARK: - Properties
   
   weak var authenticationService: AuthenticationService!
-  weak var appDelegate: AppDelegate!
   
   
   // MARK: - Delegate Methods
@@ -36,12 +35,7 @@ class LoginViewController: UIViewController {
     statusLabel.text = "Enter your Teamwork API key to login."
     
   }
-  
-  // confirm deinit
-  deinit {
-    print("Login VC was deinitialized!")
-  }
-  
+
   
   // MARK: - Actions
   
@@ -52,6 +46,7 @@ class LoginViewController: UIViewController {
     guard let key = apiKeyTextField.text,
       key.characters.count > 0 else {
         statusLabel.text = "You did not enter an API key.  Please try again by entering your Teamwork API key."
+        toggleLoadingIndicator()
         return
     }
     
@@ -62,7 +57,7 @@ class LoginViewController: UIViewController {
       case true:
         self.toggleLoadingIndicator()
         self.statusLabel.text = "Authentication successful! Now work on changing the root view controller!"
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
           self.showMainTabController()
         }
 
@@ -79,12 +74,12 @@ class LoginViewController: UIViewController {
   
   private func showMainTabController() {
     
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let tabController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
-    tabController.selectedIndex = 0
+    guard let loadingController = presentingViewController as? LoadingViewController else {
+      showDismissableAlert(self, title: "Error", message: "Error occurred when setting presentingViewController.")
+      return
+    }
     
-    appDelegate.window?.rootViewController = tabController
-    appDelegate.window?.makeKeyAndVisible()
+    loadingController.handleSuccessfulLogin()
     
   }
 

@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="-93.75" y="31.690140845070424"/>
         </scene>
-        <!--Projects View Controller-->
+        <!--Settings-->
         <scene sceneID="oNI-8C-S2z">
             <objects>
-                <viewController storyboardIdentifier="RootTabController" id="3no-Ht-ZY6" customClass="ProjectsViewController" customModule="TimeLogger" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RootTabController" id="3no-Ht-ZY6" customClass="SettingsViewController" customModule="TimeLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HmO-6R-ENb"/>
                         <viewControllerLayoutGuide type="bottom" id="mkf-E3-ZlG"/>
@@ -173,6 +173,21 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfr-Rv-8qX">
+                                <rect key="frame" x="91" y="288" width="193" height="30"/>
+                                <color key="backgroundColor" red="0.96545141940000001" green="0.79766589399999999" blue="0.0041561867110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logout:" destination="3no-Ht-ZY6" eventType="touchUpInside" id="phb-4u-8RB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -180,22 +195,46 @@
                             <constraint firstItem="g11-gf-Jpq" firstAttribute="top" secondItem="HmO-6R-ENb" secondAttribute="bottom" constant="8" id="0ab-Vx-k95"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lEc-A5-wP1" secondAttribute="trailing" id="7eD-1n-0bl"/>
                             <constraint firstItem="lEc-A5-wP1" firstAttribute="leading" secondItem="C5T-5W-enD" secondAttribute="leadingMargin" id="GNP-3m-WNh"/>
+                            <constraint firstItem="Lfr-Rv-8qX" firstAttribute="top" secondItem="lEc-A5-wP1" secondAttribute="bottom" constant="50" id="bwW-tO-6SH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lfr-Rv-8qX" secondAttribute="trailing" constant="75" id="dMt-yX-dz8"/>
+                            <constraint firstItem="Lfr-Rv-8qX" firstAttribute="leading" secondItem="C5T-5W-enD" secondAttribute="leadingMargin" constant="75" id="dOj-9T-mWV"/>
                             <constraint firstItem="g11-gf-Jpq" firstAttribute="leading" secondItem="C5T-5W-enD" secondAttribute="leadingMargin" id="mFf-N7-ci3"/>
                             <constraint firstItem="lEc-A5-wP1" firstAttribute="top" secondItem="g11-gf-Jpq" secondAttribute="bottom" constant="25" id="pRY-dy-ubs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="fiF-K5-QIC"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings-icon" selectedImage="settings-icon-selected" id="fiF-K5-QIC"/>
                     <connections>
                         <outlet property="adminStatusLabel" destination="LaR-qU-hIg" id="Oqf-DZ-YRV"/>
                         <outlet property="firstNameLabel" destination="sFt-2q-E7h" id="6RP-un-CWn"/>
                         <outlet property="lastNameLabel" destination="gkt-e3-tp4" id="fQN-NG-ie9"/>
                         <outlet property="siteUrlLabel" destination="Wtp-pS-4hj" id="fCe-JJ-19c"/>
                         <outlet property="userIdLabel" destination="NKg-ql-8iY" id="Ooc-cf-eHD"/>
+                        <segue destination="n0p-By-TZ9" kind="unwind" identifier="returnToLoadingView" unwindAction="returnToLoadingViewWithSegue:" id="lU4-UW-5pf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AP9-TV-9TB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="n0p-By-TZ9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="903.75" y="821.83098591549299"/>
+            <point key="canvasLocation" x="-95" y="1639"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="quy-05-XiU">
+            <objects>
+                <viewController id="sPv-eX-GKf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uu0-WL-ZsZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fcq-if-Xa3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l9c-SM-ULV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="XRe-bM-GZH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwA-yz-cYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002" y="822"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="MS1-On-syM">
@@ -209,9 +248,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roll-safe-cropped" translatesAutoresizingMaskIntoConstraints="NO" id="f7f-MU-rMC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="2GF-qb-IAK">
                                 <rect key="frame" x="76" y="140" width="223" height="113"/>
                                 <subviews>
@@ -238,10 +274,6 @@
                         <constraints>
                             <constraint firstItem="2GF-qb-IAK" firstAttribute="leading" secondItem="dON-sr-oMJ" secondAttribute="leadingMargin" constant="60" id="CvR-Ci-0or"/>
                             <constraint firstItem="2GF-qb-IAK" firstAttribute="top" secondItem="Qyl-tc-qOP" secondAttribute="bottom" constant="120" id="Imy-cA-RPl"/>
-                            <constraint firstItem="f7f-MU-rMC" firstAttribute="top" secondItem="dON-sr-oMJ" secondAttribute="top" id="Juw-u2-AEZ"/>
-                            <constraint firstItem="UP4-Eb-fCj" firstAttribute="top" secondItem="f7f-MU-rMC" secondAttribute="bottom" id="Ku7-7Z-FYX"/>
-                            <constraint firstAttribute="trailing" secondItem="f7f-MU-rMC" secondAttribute="trailing" id="RfK-z9-oCK"/>
-                            <constraint firstItem="f7f-MU-rMC" firstAttribute="leading" secondItem="dON-sr-oMJ" secondAttribute="leading" id="V7d-3M-ZwV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2GF-qb-IAK" secondAttribute="trailing" constant="60" id="eT3-Fg-bjb"/>
                         </constraints>
                     </view>
@@ -262,10 +294,14 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Sox-Ng-GRZ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.96545141940000001" green="0.79766589399999999" blue="0.0041561867110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.96545141940000001" green="0.79766589399999999" blue="0.0041561867110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="3no-Ht-ZY6" kind="relationship" relationship="viewControllers" id="xIp-qs-Wpv"/>
+                        <segue destination="sPv-eX-GKf" kind="relationship" relationship="viewControllers" id="x2E-dT-fQ6"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEI-ny-q7z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -275,7 +311,8 @@
     </scenes>
     <resources>
         <image name="cdlLogo" width="98" height="85"/>
-        <image name="roll-safe-cropped" width="414" height="736"/>
+        <image name="settings-icon" width="25" height="25"/>
+        <image name="settings-icon-selected" width="25" height="25"/>
         <image name="teamwork-logo" width="500" height="500"/>
     </resources>
 </document>

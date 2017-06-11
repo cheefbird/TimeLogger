@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		065334A21EE3FE68009A14B5 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065334A11EE3FE68009A14B5 /* APIKey.swift */; };
+		0606589B1EED2DAB00980E2F /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0606589A1EED2DAB00980E2F /* UIViewController+Alerts.swift */; };
 		065334A41EE4092B009A14B5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065334A31EE4092B009A14B5 /* LoadingViewController.swift */; };
 		066932841EDBE62600E09963 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066932831EDBE62600E09963 /* LoginViewController.swift */; };
 		066932891EDBEDB300E09963 /* TeamworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066932881EDBEDB300E09963 /* TeamworkRouter.swift */; };
 		0669328B1EDBEDD000E09963 /* TeamworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669328A1EDBEDD000E09963 /* TeamworkError.swift */; };
 		0669328E1EDCDE9800E09963 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669328D1EDCDE9800E09963 /* AuthenticationService.swift */; };
-		066932901EDCDFE500E09963 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669328F1EDCDFE500E09963 /* CoreDataStack.swift */; };
 		069427C31EE2893F00FB933F /* AuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069427C21EE2893F00FB933F /* AuthenticationServiceTests.swift */; };
-		069427C61EE2A1B000FB933F /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069427C51EE2A1B000FB933F /* ProjectsViewController.swift */; };
+		069427C61EE2A1B000FB933F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069427C51EE2A1B000FB933F /* SettingsViewController.swift */; };
 		06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB6F021EB8144000FF1B24 /* AppDelegate.swift */; };
 		06DB6F081EB8144000FF1B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F061EB8144000FF1B24 /* Main.storyboard */; };
 		06DB6F0D1EB8144000FF1B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F0C1EB8144000FF1B24 /* Assets.xcassets */; };
@@ -36,15 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		065334A11EE3FE68009A14B5 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		0606589A1EED2DAB00980E2F /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alerts.swift"; path = "Helper/UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		065334A31EE4092B009A14B5 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		066932831EDBE62600E09963 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		066932881EDBEDB300E09963 /* TeamworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamworkRouter.swift; path = TeamworkAPI/TeamworkRouter.swift; sourceTree = "<group>"; };
 		0669328A1EDBEDD000E09963 /* TeamworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamworkError.swift; path = TeamworkAPI/TeamworkError.swift; sourceTree = "<group>"; };
 		0669328D1EDCDE9800E09963 /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationService.swift; path = Services/AuthenticationService.swift; sourceTree = "<group>"; };
-		0669328F1EDCDFE500E09963 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = Services/CoreDataStack.swift; sourceTree = "<group>"; };
 		069427C21EE2893F00FB933F /* AuthenticationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationServiceTests.swift; path = Services/AuthenticationServiceTests.swift; sourceTree = "<group>"; };
-		069427C51EE2A1B000FB933F /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		069427C51EE2A1B000FB933F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		06DB6EFF1EB8144000FF1B24 /* TimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DB6F021EB8144000FF1B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DB6F071EB8144000FF1B24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -93,9 +91,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		0606589C1EED399100980E2F /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				06DB6F061EB8144000FF1B24 /* Main.storyboard */,
+				06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
 		065334A71EE41256009A14B5 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				0606589A1EED2DAB00980E2F /* UIViewController+Alerts.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -113,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				0669328D1EDCDE9800E09963 /* AuthenticationService.swift */,
-				0669328F1EDCDFE500E09963 /* CoreDataStack.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -123,9 +130,8 @@
 			children = (
 				065334A31EE4092B009A14B5 /* LoadingViewController.swift */,
 				066932831EDBE62600E09963 /* LoginViewController.swift */,
-				069427C51EE2A1B000FB933F /* ProjectsViewController.swift */,
-				06DB6F061EB8144000FF1B24 /* Main.storyboard */,
-				06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */,
+				069427C51EE2A1B000FB933F /* SettingsViewController.swift */,
+				0606589C1EED399100980E2F /* StoryBoards */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -136,14 +142,6 @@
 				06E7CA191EE1466D000114C4 /* User.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		069427C11EE2820200FB933F /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				065334A11EE3FE68009A14B5 /* APIKey.swift */,
-			);
-			name = Protocol;
 			sourceTree = "<group>";
 		};
 		069427C41EE2894300FB933F /* Services */ = {
@@ -177,7 +175,6 @@
 		06DB6F011EB8144000FF1B24 /* TimeLogger */ = {
 			isa = PBXGroup;
 			children = (
-				069427C11EE2820200FB933F /* Protocol */,
 				0669328C1EDCDE7800E09963 /* Services */,
 				069055E91EBDB7EC0043C084 /* Model */,
 				06DB6F021EB8144000FF1B24 /* AppDelegate.swift */,
@@ -221,6 +218,7 @@
 				06DB6EFD1EB8144000FF1B24 /* Resources */,
 				92FF9DE2EDFCC39B204A4AD1 /* [CP] Embed Pods Frameworks */,
 				47EF9F63C74BC2A9462D5943 /* [CP] Copy Pods Resources */,
+				0606589D1EED444C00980E2F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -316,6 +314,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0606589D1EED444C00980E2F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "function removeHeaders() {\n    find $BUILD_ROOT/Debug-iphonesimulator/  -name '*.h' -exec rm -f {} \\;\n}\nremoveHeaders";
+		};
 		2248738E401D7DD6F9162B50 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -416,12 +427,11 @@
 				06E7CA1A1EE1466D000114C4 /* User.swift in Sources */,
 				066932891EDBEDB300E09963 /* TeamworkRouter.swift in Sources */,
 				066932841EDBE62600E09963 /* LoginViewController.swift in Sources */,
-				069427C61EE2A1B000FB933F /* ProjectsViewController.swift in Sources */,
+				0606589B1EED2DAB00980E2F /* UIViewController+Alerts.swift in Sources */,
+				069427C61EE2A1B000FB933F /* SettingsViewController.swift in Sources */,
 				0669328B1EDBEDD000E09963 /* TeamworkError.swift in Sources */,
-				066932901EDCDFE500E09963 /* CoreDataStack.swift in Sources */,
 				06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */,
 				065334A41EE4092B009A14B5 /* LoadingViewController.swift in Sources */,
-				065334A21EE3FE68009A14B5 /* APIKey.swift in Sources */,
 				0669328E1EDCDE9800E09963 /* AuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +518,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-D DEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -551,6 +562,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_SWIFT_FLAGS = "-D RELEASE";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;

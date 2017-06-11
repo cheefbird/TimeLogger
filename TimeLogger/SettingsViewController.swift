@@ -1,5 +1,5 @@
 //
-//  ProjectsViewController.swift
+//  SettingsViewController.swift
 //  TimeLogger
 //
 //  Created by Francis Breidenbach on 6/3/17.
@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class ProjectsViewController: UIViewController {
+class SettingsViewController: UIViewController {
   
   // MARK: - Outlets
   @IBOutlet weak var firstNameLabel: UILabel!
@@ -19,17 +19,22 @@ class ProjectsViewController: UIViewController {
   @IBOutlet weak var siteUrlLabel: UILabel!
   
   
+  
   // MARK: - Properies
+  var authenticationService: AuthenticationService!
   private var authenticatedUser: User!
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    
     let realm = try! Realm()
     authenticatedUser = realm.objects(User.self).first
     
     configureView(using: authenticatedUser)
+    
+    print(authenticationService.description)
     
   }
   
@@ -40,6 +45,16 @@ class ProjectsViewController: UIViewController {
     userIdLabel.text = String(user.id)
     adminStatusLabel.text = user.isAdmin.description
     siteUrlLabel.text = user.url
+    
+  }
+  
+  
+  // MARK: - Actions
+  @IBAction private func logout(_ sender: AnyObject?) {
+    
+    
+    authenticationService.clearUserInfo()
+    performSegue(withIdentifier: "returnToLoadingView", sender: nil)
     
   }
   

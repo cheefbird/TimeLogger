@@ -30,44 +30,66 @@ class LoadingViewController: UIViewController {
     activityIndicator.isHidden = false
     activityIndicator.startAnimating()
     statusLabel.text = "Checking for authenticated user..."
-    guard authenticationService.hasAuthenticated else {
+    
+    // Check auth status and handle result
+    let userHasAuthenticated = authenticationService.hasAuthenticated
+    handleAuthenticationStatus(using: userHasAuthenticated)
+    
+  }
+
+  
+  // MARK: - Debug Helper
+  #if DEBUG
+  deinit {
+    print("LoadingView deinitialized!")
+  }
+  #else
+  deinit {
+  
+  }
+  #endif
+  
+  
+  
+  // MARK: - Methods
+  private func handleAuthenticationStatus(using authStatus: Bool) {
+    
+    switch authStatus {
       
-      statusLabel.text = "You haven't logged in yet. Taking you to login..."
+    case true:
+      statusLabel.text = "Found authenticated user! Logging in..."
       
       DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
         
         self.activityIndicator.stopAnimating()
         self.activityIndicator.isHidden = true
-        self.showLoginController()
-
+        self.showTabController()
+        
       }
       
-      return
-    }
-    
-    statusLabel.text = "Found authenticated user! Logging in..."
-    
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+    case false:
+      statusLabel.text = "You haven't logged in yet. Taking you to login..."
       
-      self.activityIndicator.stopAnimating()
-      self.activityIndicator.isHidden = true
-      self.showTabController()
+      DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.isHidden = true
+        self.showLoginController()
+      }
       
     }
     
   }
-  
-  
-  // MARK: - Methods
   
   private func showTabController() {
     
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let tabController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
     
-    tabController.selectedIndex = 0
-    delegate.window?.rootViewController = tabController
-    delegate.window?.makeKey()
+    // TODO: Change after building initial selected tab
+    let settingsController = tabController.viewControllers?[0] as! SettingsViewController
+    settingsController.authenticationService = authenticationService
+        
+    show(tabController, sender: self)
     
   }
   
@@ -77,30 +99,26 @@ class LoadingViewController: UIViewController {
     let loginController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
     
     loginController.authenticationService = authenticationService
-    loginController.appDelegate = delegate
     
-    delegate.window?.rootViewController = loginController
-    delegate.window?.makeKeyAndVisible()
+    present(loginController, animated: true, completion: nil)
     
   }
   
-  private func animateRootControllerTransition() {
+  func handleSuccessfulLogin() {
     
+    dismiss(animated: true, completion: {
+      self.showTabController()
+    })
     
-    
+  }
+  
+  // MARK: - Segues
+  @IBAction func returnToLoadingView(segue: UIStoryboardSegue) {
+    handleAuthenticationStatus(using: authenticationService.hasAuthenticated)
   }
   
 }
 
-
-// MARK: - Action Delay
-extension LoadingViewController {
-  
-  fileprivate func checkAuthenticationStatus(completion: (Bool) -> Void) {
-    completion(authenticationService.hasAuthenticated)
-  }
-  
-}
 
 
 

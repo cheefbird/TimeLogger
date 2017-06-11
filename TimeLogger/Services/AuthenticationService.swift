@@ -26,6 +26,11 @@ class AuthenticationService {
     return secureKey ?? "None"
   }
   
+
+  lazy var description: String = {
+    return "AuthStatus: \(self.hasAuthenticated), APIKey: \(self.apiKey)"
+  }()
+
   
   // MARK: - Constants
   private let keychain = Keychain(service: "com.fbreidenbach.TimeLogger")
@@ -120,6 +125,13 @@ class AuthenticationService {
       return
       
     }
+    
+  }
+  
+  func clearUserInfo() {
+    
+    secureKey = nil
+    hasValidKey = false
     
   }
   
