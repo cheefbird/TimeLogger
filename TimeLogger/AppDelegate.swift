@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     loadingViewController.authenticationService = authenticationService
-    loadingViewController.delegate = self
     
     return true
   }

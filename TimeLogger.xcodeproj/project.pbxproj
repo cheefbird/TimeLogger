@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		057A0BA15908F9EAB75C900F /* Pods_TimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE09BB82DCC63DD88748D54 /* Pods_TimeLogger.framework */; };
 		0606589B1EED2DAB00980E2F /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0606589A1EED2DAB00980E2F /* UIViewController+Alerts.swift */; };
+		063335FA1EEE57CE00FBB4F5 /* LoadingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063335F91EEE57CE00FBB4F5 /* LoadingViewControllerTests.swift */; };
 		065334A41EE4092B009A14B5 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065334A31EE4092B009A14B5 /* LoadingViewController.swift */; };
 		066932841EDBE62600E09963 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066932831EDBE62600E09963 /* LoginViewController.swift */; };
 		066932891EDBEDB300E09963 /* TeamworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066932881EDBEDB300E09963 /* TeamworkRouter.swift */; };
@@ -15,13 +17,15 @@
 		0669328E1EDCDE9800E09963 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669328D1EDCDE9800E09963 /* AuthenticationService.swift */; };
 		069427C31EE2893F00FB933F /* AuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069427C21EE2893F00FB933F /* AuthenticationServiceTests.swift */; };
 		069427C61EE2A1B000FB933F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069427C51EE2A1B000FB933F /* SettingsViewController.swift */; };
+		06B509BC1EEE76AC0040A293 /* MockAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B509BB1EEE76AC0040A293 /* MockAuthenticationService.swift */; };
+		06B509BF1EEE7F400040A293 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B509BE1EEE7F400040A293 /* ProjectsViewController.swift */; };
+		06B509C21EEE80290040A293 /* ProjectsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B509C11EEE80290040A293 /* ProjectsTableViewCell.swift */; };
 		06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB6F021EB8144000FF1B24 /* AppDelegate.swift */; };
 		06DB6F081EB8144000FF1B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F061EB8144000FF1B24 /* Main.storyboard */; };
 		06DB6F0D1EB8144000FF1B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F0C1EB8144000FF1B24 /* Assets.xcassets */; };
 		06DB6F101EB8144000FF1B24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */; };
 		06E7CA1A1EE1466D000114C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7CA191EE1466D000114C4 /* User.swift */; };
-		21D8754296CBA49ECF395BBF /* Pods_TimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B27567B34860473B11B0DB9 /* Pods_TimeLogger.framework */; };
-		C7208AC4D7F19AD46ACB5D61 /* Pods_TimeLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DB3B0B7249559036BFDA765 /* Pods_TimeLoggerTests.framework */; };
+		B46E7C6741D241614DDC3D8E /* Pods_TimeLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56694146C6E78961DE0BE0B0 /* Pods_TimeLoggerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		0606589A1EED2DAB00980E2F /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alerts.swift"; path = "Helper/UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		063335F91EEE57CE00FBB4F5 /* LoadingViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewControllerTests.swift; path = Views/LoadingViewControllerTests.swift; sourceTree = "<group>"; };
 		065334A31EE4092B009A14B5 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		066932831EDBE62600E09963 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		066932881EDBEDB300E09963 /* TeamworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamworkRouter.swift; path = TeamworkAPI/TeamworkRouter.swift; sourceTree = "<group>"; };
@@ -43,6 +48,9 @@
 		0669328D1EDCDE9800E09963 /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationService.swift; path = Services/AuthenticationService.swift; sourceTree = "<group>"; };
 		069427C21EE2893F00FB933F /* AuthenticationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationServiceTests.swift; path = Services/AuthenticationServiceTests.swift; sourceTree = "<group>"; };
 		069427C51EE2A1B000FB933F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		06B509BB1EEE76AC0040A293 /* MockAuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockAuthenticationService.swift; path = Services/Mocks/MockAuthenticationService.swift; sourceTree = "<group>"; };
+		06B509BE1EEE7F400040A293 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectsViewController.swift; path = View/ProjectsViewController.swift; sourceTree = "<group>"; };
+		06B509C11EEE80290040A293 /* ProjectsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectsTableViewCell.swift; path = View/ProjectsTableViewCell.swift; sourceTree = "<group>"; };
 		06DB6EFF1EB8144000FF1B24 /* TimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DB6F021EB8144000FF1B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DB6F071EB8144000FF1B24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,12 +60,12 @@
 		06DB6F161EB8144000FF1B24 /* TimeLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimeLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DB6F1C1EB8144000FF1B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06E7CA191EE1466D000114C4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		0B27567B34860473B11B0DB9 /* Pods_TimeLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DB3B0B7249559036BFDA765 /* Pods_TimeLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40DD327B6D8B655DD215394C /* Pods-TimeLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger.release.xcconfig"; sourceTree = "<group>"; };
-		76947FF476B05EA00813C51B /* Pods-TimeLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
-		9075C18BBD2CF71FBAF85A33 /* Pods-TimeLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger.debug.xcconfig"; sourceTree = "<group>"; };
-		B55993FB52B2EC9DCFBF213E /* Pods-TimeLoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLoggerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		188E1E0FF7BB66C04580AED5 /* Pods-TimeLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger.debug.xcconfig"; sourceTree = "<group>"; };
+		2B770FDC5CE866B1AC706111 /* Pods-TimeLoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLoggerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2CE09BB82DCC63DD88748D54 /* Pods_TimeLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FC746EC35A7B73D70211511 /* Pods-TimeLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger.release.xcconfig"; sourceTree = "<group>"; };
+		56694146C6E78961DE0BE0B0 /* Pods_TimeLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		91530429213A00398EE8E3C5 /* Pods-TimeLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21D8754296CBA49ECF395BBF /* Pods_TimeLogger.framework in Frameworks */,
+				057A0BA15908F9EAB75C900F /* Pods_TimeLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,24 +81,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7208AC4D7F19AD46ACB5D61 /* Pods_TimeLoggerTests.framework in Frameworks */,
+				B46E7C6741D241614DDC3D8E /* Pods_TimeLoggerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01DEC79E1249E357BB962F15 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9075C18BBD2CF71FBAF85A33 /* Pods-TimeLogger.debug.xcconfig */,
-				40DD327B6D8B655DD215394C /* Pods-TimeLogger.release.xcconfig */,
-				B55993FB52B2EC9DCFBF213E /* Pods-TimeLoggerTests.debug.xcconfig */,
-				76947FF476B05EA00813C51B /* Pods-TimeLoggerTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		0606589C1EED399100980E2F /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +95,14 @@
 				06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */,
 			);
 			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		063335FB1EEE57D200FBB4F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				063335F91EEE57CE00FBB4F5 /* LoadingViewControllerTests.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		065334A71EE41256009A14B5 /* Helper */ = {
@@ -131,6 +136,7 @@
 				065334A31EE4092B009A14B5 /* LoadingViewController.swift */,
 				066932831EDBE62600E09963 /* LoginViewController.swift */,
 				069427C51EE2A1B000FB933F /* SettingsViewController.swift */,
+				06B509C01EEE80070040A293 /* Projects */,
 				0606589C1EED399100980E2F /* StoryBoards */,
 			);
 			name = View;
@@ -148,8 +154,26 @@
 			isa = PBXGroup;
 			children = (
 				069427C21EE2893F00FB933F /* AuthenticationServiceTests.swift */,
+				06B509BD1EEE76B00040A293 /* Mock */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		06B509BD1EEE76B00040A293 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				06B509BB1EEE76AC0040A293 /* MockAuthenticationService.swift */,
+			);
+			name = Mock;
+			sourceTree = "<group>";
+		};
+		06B509C01EEE80070040A293 /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				06B509BE1EEE7F400040A293 /* ProjectsViewController.swift */,
+				06B509C11EEE80290040A293 /* ProjectsTableViewCell.swift */,
+			);
+			name = Projects;
 			sourceTree = "<group>";
 		};
 		06DB6EF61EB8144000FF1B24 = {
@@ -158,8 +182,8 @@
 				06DB6F011EB8144000FF1B24 /* TimeLogger */,
 				06DB6F191EB8144000FF1B24 /* TimeLoggerTests */,
 				06DB6F001EB8144000FF1B24 /* Products */,
-				01DEC79E1249E357BB962F15 /* Pods */,
-				AFD8633F6CC86971A097F077 /* Frameworks */,
+				2F0411099EF1BD70963E0163 /* Pods */,
+				977406BC13BF6BB352922890 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,16 +215,28 @@
 			isa = PBXGroup;
 			children = (
 				069427C41EE2894300FB933F /* Services */,
+				063335FB1EEE57D200FBB4F5 /* Views */,
 				06DB6F1C1EB8144000FF1B24 /* Info.plist */,
 			);
 			path = TimeLoggerTests;
 			sourceTree = "<group>";
 		};
-		AFD8633F6CC86971A097F077 /* Frameworks */ = {
+		2F0411099EF1BD70963E0163 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0B27567B34860473B11B0DB9 /* Pods_TimeLogger.framework */,
-				1DB3B0B7249559036BFDA765 /* Pods_TimeLoggerTests.framework */,
+				188E1E0FF7BB66C04580AED5 /* Pods-TimeLogger.debug.xcconfig */,
+				3FC746EC35A7B73D70211511 /* Pods-TimeLogger.release.xcconfig */,
+				2B770FDC5CE866B1AC706111 /* Pods-TimeLoggerTests.debug.xcconfig */,
+				91530429213A00398EE8E3C5 /* Pods-TimeLoggerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		977406BC13BF6BB352922890 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CE09BB82DCC63DD88748D54 /* Pods_TimeLogger.framework */,
+				56694146C6E78961DE0BE0B0 /* Pods_TimeLoggerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,13 +248,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06DB6F1F1EB8144000FF1B24 /* Build configuration list for PBXNativeTarget "TimeLogger" */;
 			buildPhases = (
-				2248738E401D7DD6F9162B50 /* [CP] Check Pods Manifest.lock */,
+				A78FDDC8E8E4DB558636CB1C /* [CP] Check Pods Manifest.lock */,
 				06DB6EFB1EB8144000FF1B24 /* Sources */,
 				06DB6EFC1EB8144000FF1B24 /* Frameworks */,
 				06DB6EFD1EB8144000FF1B24 /* Resources */,
-				92FF9DE2EDFCC39B204A4AD1 /* [CP] Embed Pods Frameworks */,
-				47EF9F63C74BC2A9462D5943 /* [CP] Copy Pods Resources */,
-				0606589D1EED444C00980E2F /* ShellScript */,
+				72034A4186E1808A342B2D2B /* [CP] Embed Pods Frameworks */,
+				772F10992E0027643B33D40D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,12 +268,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06DB6F221EB8144000FF1B24 /* Build configuration list for PBXNativeTarget "TimeLoggerTests" */;
 			buildPhases = (
-				9F389DE5B5F568AF779FC205 /* [CP] Check Pods Manifest.lock */,
+				898D8EE36DA6E86E4782AF35 /* [CP] Check Pods Manifest.lock */,
 				06DB6F121EB8144000FF1B24 /* Sources */,
 				06DB6F131EB8144000FF1B24 /* Frameworks */,
 				06DB6F141EB8144000FF1B24 /* Resources */,
-				7217CAA35919D95D38DAB65B /* [CP] Embed Pods Frameworks */,
-				D0AFE9381C5EB886CFAB381F /* [CP] Copy Pods Resources */,
+				BE63F3711F65A6EDF9E1F627 /* [CP] Embed Pods Frameworks */,
+				B218949B5AA2B25C34BD2285 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -314,65 +349,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0606589D1EED444C00980E2F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "function removeHeaders() {\n    find $BUILD_ROOT/Debug-iphonesimulator/  -name '*.h' -exec rm -f {} \\;\n}\nremoveHeaders";
-		};
-		2248738E401D7DD6F9162B50 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		47EF9F63C74BC2A9462D5943 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7217CAA35919D95D38DAB65B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		92FF9DE2EDFCC39B204A4AD1 /* [CP] Embed Pods Frameworks */ = {
+		72034A4186E1808A342B2D2B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -387,7 +364,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F389DE5B5F568AF779FC205 /* [CP] Check Pods Manifest.lock */ = {
+		772F10992E0027643B33D40D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		898D8EE36DA6E86E4782AF35 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,7 +394,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		D0AFE9381C5EB886CFAB381F /* [CP] Copy Pods Resources */ = {
+		A78FDDC8E8E4DB558636CB1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B218949B5AA2B25C34BD2285 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -417,6 +424,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BE63F3711F65A6EDF9E1F627 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -425,11 +447,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				06E7CA1A1EE1466D000114C4 /* User.swift in Sources */,
+				06B509C21EEE80290040A293 /* ProjectsTableViewCell.swift in Sources */,
 				066932891EDBEDB300E09963 /* TeamworkRouter.swift in Sources */,
 				066932841EDBE62600E09963 /* LoginViewController.swift in Sources */,
 				0606589B1EED2DAB00980E2F /* UIViewController+Alerts.swift in Sources */,
 				069427C61EE2A1B000FB933F /* SettingsViewController.swift in Sources */,
 				0669328B1EDBEDD000E09963 /* TeamworkError.swift in Sources */,
+				06B509BF1EEE7F400040A293 /* ProjectsViewController.swift in Sources */,
 				06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */,
 				065334A41EE4092B009A14B5 /* LoadingViewController.swift in Sources */,
 				0669328E1EDCDE9800E09963 /* AuthenticationService.swift in Sources */,
@@ -440,7 +464,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063335FA1EEE57CE00FBB4F5 /* LoadingViewControllerTests.swift in Sources */,
 				069427C31EE2893F00FB933F /* AuthenticationServiceTests.swift in Sources */,
+				06B509BC1EEE76AC0040A293 /* MockAuthenticationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +597,7 @@
 		};
 		06DB6F201EB8144000FF1B24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9075C18BBD2CF71FBAF85A33 /* Pods-TimeLogger.debug.xcconfig */;
+			baseConfigurationReference = 188E1E0FF7BB66C04580AED5 /* Pods-TimeLogger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WA3KPNE52J;
@@ -586,7 +612,7 @@
 		};
 		06DB6F211EB8144000FF1B24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40DD327B6D8B655DD215394C /* Pods-TimeLogger.release.xcconfig */;
+			baseConfigurationReference = 3FC746EC35A7B73D70211511 /* Pods-TimeLogger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WA3KPNE52J;
@@ -601,7 +627,7 @@
 		};
 		06DB6F231EB8144000FF1B24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B55993FB52B2EC9DCFBF213E /* Pods-TimeLoggerTests.debug.xcconfig */;
+			baseConfigurationReference = 2B770FDC5CE866B1AC706111 /* Pods-TimeLoggerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -619,7 +645,7 @@
 		};
 		06DB6F241EB8144000FF1B24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 76947FF476B05EA00813C51B /* Pods-TimeLoggerTests.release.xcconfig */;
+			baseConfigurationReference = 91530429213A00398EE8E3C5 /* Pods-TimeLoggerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

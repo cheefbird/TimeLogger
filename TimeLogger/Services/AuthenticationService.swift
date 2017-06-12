@@ -91,13 +91,19 @@ class AuthenticationService {
         
         let accountJSON = JSON(accountDict)
         
-        self.secureKey = key
-        self.hasValidKey = true
+        self.updateProperties(key: key, keyIsValid: true)
         self.buildAndSaveUser(from: accountJSON)
         
         resultHandler(true)
         
     }
+    
+  }
+  
+  private func updateProperties(key: String, keyIsValid: Bool) {
+    
+    self.secureKey = key
+    self.hasValidKey = keyIsValid
     
   }
   

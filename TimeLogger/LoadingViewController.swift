@@ -18,8 +18,6 @@ class LoadingViewController: UIViewController {
   
   // MARK: - Properties
   var authenticationService: AuthenticationService!
-  var delegate: AppDelegate!
-  
   
   
   // MARK: - View Methods
