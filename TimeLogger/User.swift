@@ -18,6 +18,7 @@ class User: Object {
   dynamic var id = 0
   dynamic var isAdmin = false
   dynamic var url = ""
+  dynamic var hasAuthenticated = false
   
   
   // MARK: - Init
@@ -34,6 +35,8 @@ class User: Object {
     isAdmin = json["userIsAdmin"].boolValue
     url = json["URL"].stringValue
     
+    hasAuthenticated = true
+    
   }
   
   
@@ -41,6 +44,14 @@ class User: Object {
   override static func primaryKey() -> String? {
     return "id"
   }
+  
+  // MARK: - Authenticated User
+  static func retrieveSavedUser(withID userId: Int = APIKey.sharedInstance.uniqueID) -> User {
+    let realm = try! Realm()
+    return realm.object(ofType: User.self, forPrimaryKey: userId) ?? User()
+  }
+  
+  
   
 }
 

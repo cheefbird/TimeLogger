@@ -9,133 +9,95 @@
 import Foundation
 
 import KeychainAccess
-import Alamofire
 import RealmSwift
 import SwiftyJSON
+import RxSwift
+import RxAlamofire
+//import Alamofire
 
-class AuthenticationService {
+
+
+
+struct AuthenticationService: AuthenticationServiceType {
   
-  // MARK: - Public Interface
-  // GET auth status
-  var hasAuthenticated: Bool {
-    return hasValidKey
+  init() {
+    print("AuthenticationService initialized")
   }
   
-  // GET key
-  var apiKey: String {
-    return secureKey ?? "None"
-  }
+  //  var apiKey: APIKey
   
-
-  lazy var description: String = {
-    return "AuthStatus: \(self.hasAuthenticated), APIKey: \(self.apiKey)"
-  }()
-
+  //  var hasAuthenticated: Bool {
+  //    let status = APIKey.sharedInstance.isAuthentic
+  //    return status
+  //  }
   
-  // MARK: - Constants
-  private let keychain = Keychain(service: "com.fbreidenbach.TimeLogger")
-  
-  
-  // MARK: - Private Interface
-  private var secureKey: String? {
+  func loadUser() -> Observable<User> {
+    let user = User.retrieveSavedUser()
+    guard user.id > 0 else { return .error(TeamworkServiceError.existingUserLoadFailed("No stored user")) }
     
-    get {
-      guard let key = try? keychain.getString("TeamworkAPIKey"),
-        key != nil else {
-          return nil
-      }
+    return .just(user)
+    
+  }
+  
+  @discardableResult
+  func authenticateUser(withKey key: String) -> Observable<User> {
+    
+    let savedUser = withRealm("save new user") { realm -> Observable<User> in
       
-      return key
-      
-    }
-    
-    set {
-      guard let newKey = newValue else { return }
-      try! keychain.set(newKey, key: "TeamworkAPIKey")
-    }
-    
-  }
-  
-  
-  private var hasValidKey: Bool {
-    
-    get {
-      return UserDefaults.standard.bool(forKey: "HasCompletedAuthentication")
-    }
-    
-    set {
-      UserDefaults.standard.set(newValue, forKey: "HasCompletedAuthentication")
-    }
-    
-  }
-  
-  
-  // MARK: - Teamwork Authentication
-  func authenticate(withKey key: String, resultHandler: @escaping (Bool) -> Void) {
-    
-    Alamofire.request(TeamworkRouter.authenticate(key))
-      .responseJSON { response in
-        
-        guard response.result.error == nil else {
-          print(response.result.error!)
-          resultHandler(false)
-          return
+      // This requests auth info using the key value. It will only ever return if the request succeeds, so we need to figure out bad requests.
+      let user = RxAlamofire.requestJSON(TeamworkRouter.authenticate(key))
+        .filter { response, _ in
+          guard 200..<300 ~= response.statusCode else {
+            throw TeamworkServiceError.authenticationFailed(key: key)
+          }
+          
+          APIKey.sharedInstance.value = key
+          return true
+          
         }
-        
-        guard let json = response.result.value as? [String: Any],
-          let accountDict = json["account"] as? [String: Any] else {
-            print("Something went wrong when attempting to serialize the response JSON.")
-            resultHandler(false)
-            return
+        .map { _, data -> JSON in
+          let json = data as! [String: Any]
+          let account = json["account"] as! [String: Any]
+          
+          return JSON(account)
         }
-        
-        let accountJSON = JSON(accountDict)
-        
-        self.secureKey = key
-        self.hasValidKey = true
-        self.buildAndSaveUser(from: accountJSON)
-        
-        resultHandler(true)
-        
+        .map { account -> User in
+          let newUser = User(fromJSON: account)
+          try realm.write {
+            realm.add(newUser, update: true)
+          }
+          
+          return newUser
+        }
+        .do(onNext: { user in
+          APIKey.sharedInstance.isAuthentic = user.hasAuthenticated
+          APIKey.sharedInstance.value = key
+          APIKey.sharedInstance.uniqueID = user.id
+        }, onError: { error in
+          APIKey.sharedInstance.isAuthentic = false
+          APIKey.sharedInstance.uniqueID = 50
+        })
+      
+      
+      return user
     }
+    
+    return savedUser ?? .error(TeamworkServiceError.authenticationFailed(key: key))
     
   }
   
-  private func buildAndSaveUser(from json: JSON) {
-    
-    let realm = try! Realm()
-    let user = User(fromJSON: json)
-    
-    let existingUsers = realm.objects(User.self)
-      .filter("id = %@", user.id)
-    
-    switch existingUsers.isEmpty {
-      
-    case true:
-      try! realm.write {
-        realm.add(user)
-      }
-      return
-      
-    case false:
-      try! realm.write {
-        realm.delete(existingUsers)
-        realm.add(user)
-      }
-      return
-      
-    }
-    
+  
+  @discardableResult
+  func logoutUser() -> Observable<Void> {
+    return .just()
   }
   
-  func clearUserInfo() {
-    
-    secureKey = nil
-    hasValidKey = false
-    
-  }
+  
+  
+  
   
 }
+
 
 
 

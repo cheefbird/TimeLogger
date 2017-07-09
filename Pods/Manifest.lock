@@ -1,40 +1,53 @@
 PODS:
-  - Alamofire (4.4.0)
+  - Action (3.1.1):
+    - RxCocoa (~> 3.4)
+    - RxSwift (~> 3.4)
+  - Alamofire (4.5.0)
   - KeychainAccess (3.0.2)
-  - Realm (2.8.0):
-    - Realm/Headers (= 2.8.0)
-  - Realm/Headers (2.8.0)
-  - RealmSwift (2.8.0):
-    - Realm (= 2.8.0)
-  - RxAlamofire (3.0.2):
-    - RxAlamofire/Core (= 3.0.2)
-  - RxAlamofire/Core (3.0.2):
+  - Realm (2.8.3):
+    - Realm/Headers (= 2.8.3)
+  - Realm/Headers (2.8.3)
+  - RealmSwift (2.8.3):
+    - Realm (= 2.8.3)
+  - RxAlamofire (3.0.3):
+    - RxAlamofire/Core (= 3.0.3)
+  - RxAlamofire/Core (3.0.3):
     - Alamofire (~> 4.0)
     - RxSwift (~> 3.0)
+  - RxBlocking (3.5.0):
+    - RxSwift (~> 3.4)
   - RxCocoa (3.5.0):
     - RxSwift (~> 3.4)
   - RxSwift (3.5.0)
+  - RxTest (3.5.0):
+    - RxSwift (~> 3.4)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
+  - Action
   - Alamofire
   - KeychainAccess
   - RealmSwift
   - RxAlamofire
+  - RxBlocking
   - RxCocoa
   - RxSwift
+  - RxTest
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Action: e224bd151fe2e057f4189b4a9df0dc5d21264a9e
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
-  Realm: 929243ad2b618b3232e70658bedc61110e7563f1
-  RealmSwift: 5b7079b891f2833d1849294161ba3e092bbda3f6
-  RxAlamofire: bc53604b29fd2d220cfaa490c736cc4500819f34
+  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
+  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
+  RxAlamofire: 5eb39188c4917ad98127c0ecb4878a61b7517003
+  RxBlocking: 471315e18b87c5ed4b9d0c69a57dfdbca5c01af1
   RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
   RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
+  RxTest: 1763765fd0e2282b0eb44c9050effdd7fe7156d4
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 16a97ca64f21d7855b077befd21ab2d9e64f1d28
+PODFILE CHECKSUM: 7456f06ddfd4cbbebb3b3bcf679bb53f1046a10d
 
 COCOAPODS: 1.2.1

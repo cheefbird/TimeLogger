@@ -7,27 +7,28 @@
 //
 
 import UIKit
-import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
+  
   var authenticationService: AuthenticationService!
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-    authenticationService = AuthenticationService()
+    let authService = AuthenticationService()
+    let sceneCoordinator = SceneCoordinator(window: window!)
     
-    guard let loadingViewController = window?.rootViewController as? LoadingViewController else {
-      return true
-    }
+    let loadingViewModel = LoadingViewModel(coordinator: sceneCoordinator, authService: authService)
     
-    loadingViewController.authenticationService = authenticationService
-    loadingViewController.delegate = self
+    let firstScene = Scene.loading(loadingViewModel)
+    
+    sceneCoordinator.transition(to: firstScene, type: .root)
     
     return true
   }
   
 }
+
 

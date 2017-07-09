@@ -34,7 +34,6 @@ class SettingsViewController: UIViewController {
     
     configureView(using: authenticatedUser)
     
-    print(authenticationService.description)
     
   }
   
@@ -53,8 +52,8 @@ class SettingsViewController: UIViewController {
   @IBAction private func logout(_ sender: AnyObject?) {
     
     
-    authenticationService.clearUserInfo()
-    performSegue(withIdentifier: "returnToLoadingView", sender: nil)
+//    authenticationService.clearUserInfo()
+//    performSegue(withIdentifier: "returnToLoadingView", sender: nil)
     
   }
   

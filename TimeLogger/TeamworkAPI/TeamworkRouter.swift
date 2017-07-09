@@ -12,12 +12,24 @@ import Alamofire
 
 enum TeamworkRouter: URLRequestConvertible {
   
-  static let baseURL = "https://ciestudios.teamwork.com"
-  
+  // MARK: - Cases
   case authenticate(String)
   
   
+  // MARK: - URL Components
   
+  /// Set base URL for the request. Authentication utilizes teamwork's generic auth endpoint.
+  var baseURL: String {
+    
+    switch self {
+    case .authenticate:
+      return "https://authenticate.teamwork.com"
+    }
+    
+  }
+  
+  
+  /// Set request method: GET, PUT, POST, etc.
   var method: HTTPMethod {
     
     switch self {
@@ -29,6 +41,7 @@ enum TeamworkRouter: URLRequestConvertible {
   }
   
   
+  /// Path to append to baseURL. Must begin with "/".
   var relativePath: String {
     
     switch self {
@@ -41,6 +54,7 @@ enum TeamworkRouter: URLRequestConvertible {
   }
   
   
+  /// Set request parameters.
   var parameters: Parameters? {
     
     switch self {
@@ -53,6 +67,7 @@ enum TeamworkRouter: URLRequestConvertible {
   }
   
   
+  /// Sets request headers. Default JSON headers are included without needing to be specified.
   var headers: [String: Any] {
     
     var headers = [String: Any]()
@@ -78,7 +93,7 @@ enum TeamworkRouter: URLRequestConvertible {
   
   func asURLRequest() throws -> URLRequest {
     
-    guard let url = URL(string: TeamworkRouter.baseURL) else {
+    guard let url = URL(string: baseURL) else {
       throw TeamworkError.routingError(reason: "Error converting baseURL to URL")
     }
     

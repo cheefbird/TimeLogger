@@ -13,11 +13,14 @@ target 'TimeLogger' do
   pod 'SwiftyJSON'
   pod 'KeychainAccess'
   pod 'RealmSwift'
+  pod 'Action'
   
 
   target 'TimeLoggerTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'RxTest'
+    pod 'RxBlocking'
   end
 
 end
