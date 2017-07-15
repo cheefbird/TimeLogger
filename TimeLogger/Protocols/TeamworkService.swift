@@ -10,9 +10,11 @@ import Foundation
 import RealmSwift
 
 
+
 protocol TeamworkService {
   
   func withRealm<T>(_ operation: String, action: (Realm) throws -> T) -> T?
+  
   
 }
 

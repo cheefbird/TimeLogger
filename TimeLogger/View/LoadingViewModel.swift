@@ -19,15 +19,13 @@ class LoadingViewModel {
   
   let disposeBag = DisposeBag()
   
-  var authStatus = Variable<Bool>(APIKey.sharedInstance.isAuthentic)
+  let authStatus = Variable<Bool>(APIKey.sharedInstance.isAuthentic)
   
-  private var currentUser = User()
+//  private var currentUser = User()
   
   init(coordinator: SceneCoordinatorType, authService: AuthenticationServiceType) {
     sceneCoordinator = coordinator
     authenticationService = authService
-    
-    authStatus.value = APIKey.sharedInstance.isAuthentic
     
     print("LoadingVM Initialized: sceneCoord: \(self.sceneCoordinator), authServ: \(self.authenticationService)")
     
@@ -37,48 +35,20 @@ class LoadingViewModel {
   
   // MARK: - Methods
   
-  func userIsAuthenticated() {
-    
-    let user = User.retrieveSavedUser()
-    let projectsViewModel = ProjectsViewModel(
-      sceneCoordinator: self.sceneCoordinator,
-      projectService: ProjectService(),
-      currentUser: user)
-    
-  }
-  
-  func userNeedsLogin() {
-    
+  func presentLogin() {
     
     let loginViewModel = LoginViewModel(
       sceneCoordinator: self.sceneCoordinator,
-      loginAction: self.loginAction)
+      authService: self.authenticationService)
     
-    self.sceneCoordinator.transition(to: Scene.login(loginViewModel), type: .modal)
-    
+    sceneCoordinator.transition(to: Scene.login(loginViewModel), type: .modal)
     
   }
   
-  
-
-  
-  
-  lazy var loginAction: Action<String, Void> = { this in
+  func showMainTab() {
     
-    return Action { key in
-      return self.authenticationService
-        .authenticateUser(withKey: key)
-        .flatMap { user -> Observable<Void> in
-          let projectsViewModel = ProjectsViewModel(
-            sceneCoordinator: self.sceneCoordinator,
-            projectService: ProjectService(),
-            currentUser: user)
-          
-          return self.sceneCoordinator.transition(to: Scene.projects(projectsViewModel), type: .root)
-      }
-    }
-    
-  }(self)
+  }
+  
   
 }
 

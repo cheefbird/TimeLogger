@@ -14,12 +14,10 @@ struct ProjectsViewModel {
   let sceneCoordinator: SceneCoordinatorType
   let projectService: ProjectServiceType
   
-  var currentUser: User
   
-  init(sceneCoordinator: SceneCoordinatorType, projectService: ProjectServiceType, currentUser: User) {
+  init(sceneCoordinator: SceneCoordinatorType, projectService: ProjectServiceType) {
     self.sceneCoordinator = sceneCoordinator
     self.projectService = projectService
-    self.currentUser = currentUser
   }
   
 }

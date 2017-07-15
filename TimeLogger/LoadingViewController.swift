@@ -32,12 +32,21 @@ class LoadingViewController: UIViewController, BindableType {
     statusLabel.text = "Loading ..."
     activityIndicator.startAnimating()
     
+    let status = viewModel.authStatus.asObservable().share()
     
+    status
+      .filter { $0 }
+      .subscribe(onNext: { [weak self] _ in
+        self?.viewModel.presentLogin()
+      })
+      .disposed(by: disposeBag)
     
-    // Check auth status and handle result
-    //    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-    //      self.viewModel.handleAuthStatus()
-    //    }
+    status
+      .filter { !$0 }
+      .subscribe(onNext: { [weak self] _ in
+        self?.viewModel.showMainTab()
+      })
+      .disposed(by: disposeBag)
     
   }
   
@@ -48,33 +57,10 @@ class LoadingViewController: UIViewController, BindableType {
   
   func bindViewModel() {
     
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-      self.viewModel.authStatus.asObservable()
-        .subscribe(onNext: { status in
-          print("AuthStatus: \(status), handling ...")
-          switch status {
-          case true:
-            self.viewModel.userIsAuthenticated()
-            
-          case false:
-            self.viewModel.userNeedsLogin()
-          }
-        }, onError: { error in
-          
-        })
-        .disposed(by: self.disposeBag)
-    }
     
     
     
   }
-  
-  
-  // MARK: - Methods
-  
-  
-  
-  
   
   // MARK: - Segues
   @IBAction func returnToLoadingView(segue: UIStoryboardSegue) {
@@ -82,6 +68,16 @@ class LoadingViewController: UIViewController, BindableType {
   }
   
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

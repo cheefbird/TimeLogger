@@ -12,27 +12,6 @@ import UIKit
 
 extension UIViewController {
   
-  // MARK: - Alert Types
-//  enum AlertAction {
-//    
-//    typealias Handler = (() -> Void)
-//    
-//    case accept(String, Handler?)
-//    case cancel(String, Handler?)
-//    
-//    
-//    func create() -> UIAlertAction {
-//      
-//      switch self {
-//        
-//        case .accept(let message)
-//        
-//      }
-//      
-//    }
-//    
-//  }
-  
   func showDismissableAlert(_ presenter: UIViewController, title: String, message: String, completion: (() -> Void)? = nil) {
     
     let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -44,7 +23,6 @@ extension UIViewController {
     presenter.present(alertController, animated: true, completion: completion)
     
   }
-  
 }
 
 

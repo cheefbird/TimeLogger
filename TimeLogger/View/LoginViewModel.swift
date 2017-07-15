@@ -8,31 +8,26 @@
 
 import Foundation
 import RxSwift
-import Action
 
 
 class LoginViewModel {
   
-  let loginAction: Action<String, Void>
+  let sceneCoordinator: SceneCoordinatorType
+  let authenticationService: AuthenticationServiceType
+  
   let disposeBag = DisposeBag()
   
   
   
-  init(sceneCoordinator: SceneCoordinatorType, loginAction: Action<String, Void>) {
+  init(sceneCoordinator: SceneCoordinatorType, authService: AuthenticationServiceType) {
 
-    self.loginAction = loginAction
-    
-    loginAction.executionObservables
-      .take(1)
-      .subscribe(onNext: { _ in
-        sceneCoordinator.pop()
-      })
-      .disposed(by: disposeBag)
+    self.sceneCoordinator = sceneCoordinator
+    self.authenticationService = authService
     
   }
   
     
-
+  
   
   
   

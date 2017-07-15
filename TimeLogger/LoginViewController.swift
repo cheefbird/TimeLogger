@@ -46,10 +46,7 @@ class LoginViewController: UIViewController, BindableType {
   
   func bindViewModel() {
     
-    loginButton.rx.tap
-      .withLatestFrom(apiKeyTextField.rx.text.orEmpty)
-      .subscribe(viewModel.loginAction.inputs)
-      .disposed(by: disposeBag)
+
     
   }
 

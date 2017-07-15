@@ -46,12 +46,12 @@ struct AuthenticationService: AuthenticationServiceType {
       
       // This requests auth info using the key value. It will only ever return if the request succeeds, so we need to figure out bad requests.
       let user = RxAlamofire.requestJSON(TeamworkRouter.authenticate(key))
+        .subscribeOn(MainScheduler.instance)
         .filter { response, _ in
           guard 200..<300 ~= response.statusCode else {
             throw TeamworkServiceError.authenticationFailed(key: key)
           }
           
-          APIKey.sharedInstance.value = key
           return true
           
         }
@@ -69,14 +69,6 @@ struct AuthenticationService: AuthenticationServiceType {
           
           return newUser
         }
-        .do(onNext: { user in
-          APIKey.sharedInstance.isAuthentic = user.hasAuthenticated
-          APIKey.sharedInstance.value = key
-          APIKey.sharedInstance.uniqueID = user.id
-        }, onError: { error in
-          APIKey.sharedInstance.isAuthentic = false
-          APIKey.sharedInstance.uniqueID = 50
-        })
       
       
       return user
@@ -91,6 +83,8 @@ struct AuthenticationService: AuthenticationServiceType {
   func logoutUser() -> Observable<Void> {
     return .just()
   }
+  
+  
   
   
   
