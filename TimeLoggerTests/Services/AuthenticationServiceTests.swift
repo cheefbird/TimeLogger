@@ -11,30 +11,20 @@ import XCTest
 
 class AuthenticationServiceTests: XCTestCase {
   
-  var authService: AuthenticationService!
+  var authenticationService: AuthenticationService!
   
   override func setUp() {
     super.setUp()
     
-    authService = AuthenticationService()
+    authenticationService = AuthenticationService()
+    
+    
   }
   
   override func tearDown() {
     
     super.tearDown()
   }
-  
-  
-  // MARK: - Property Tests
-//  func test_SecureKey_SetThenGet_ShouldReturnInitiallySetKey() {
-//    
-//    authService.secureKey = "Walk123Wetter"
-//    
-//    let key = authService.secureKey!
-//    
-//    XCTAssertEqual("Walk123Wetter", key)
-//    
-//  }
   
   
 }
