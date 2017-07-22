@@ -25,7 +25,6 @@ class LoginViewController: UIViewController, BindableType {
   // MARK: - Properties
   var viewModel: LoginViewModel!
   
-  var authenticationService: AuthenticationService!
   
   let disposeBag = DisposeBag()
   
@@ -35,7 +34,7 @@ class LoginViewController: UIViewController, BindableType {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    statusLabel.text = "Enter your Teamwork API key to login."
+    
     
   }
   
@@ -46,7 +45,16 @@ class LoginViewController: UIViewController, BindableType {
   
   func bindViewModel() {
     
-
+    viewModel.helperText.asDriver()
+      .drive(statusLabel.rx.text)
+      .disposed(by: disposeBag)
+    
+    loginButton.rx.tap
+      .withLatestFrom(apiKeyTextField.rx.text.orEmpty)
+      .filter { $0.characters.count > 0 }
+      .subscribe(viewModel.loginAction.inputs)
+      .disposed(by: disposeBag)
+    
     
   }
 

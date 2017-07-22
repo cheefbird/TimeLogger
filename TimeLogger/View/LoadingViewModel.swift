@@ -14,15 +14,16 @@ import Action
 
 class LoadingViewModel {
   
+  // MARK: - Properties
   let sceneCoordinator: SceneCoordinatorType
   let authenticationService: AuthenticationServiceType
   
   let disposeBag = DisposeBag()
   
-  let authStatus = Variable<Bool>(APIKey.sharedInstance.isAuthentic)
+  let loadingText = Variable<String>("Loading ...")
   
-//  private var currentUser = User()
   
+  // MARK: - Init
   init(coordinator: SceneCoordinatorType, authService: AuthenticationServiceType) {
     sceneCoordinator = coordinator
     authenticationService = authService
@@ -32,22 +33,35 @@ class LoadingViewModel {
   }
   
   
+  // MARK: - Computed Properties
+  var authStatus: Observable<Bool> {
+    return self.authenticationService.authenticateUser(withKey: APIKey.sharedInstance.value)
+      .catchErrorJustReturn(User())
+      .map { return $0.hasAuthenticated }
+  }
+  
   
   // MARK: - Methods
+  
+  
   
   func presentLogin() {
     
     let loginViewModel = LoginViewModel(
       sceneCoordinator: self.sceneCoordinator,
-      authService: self.authenticationService)
+      authService: self.authenticationService, loginAction: tryLogin)
     
     sceneCoordinator.transition(to: Scene.login(loginViewModel), type: .modal)
     
   }
   
-  func showMainTab() {
-    
-  }
+  lazy var tryLogin: Action<String, Bool> = {
+    return Action { input in
+      return self.authenticationService.authenticateUser(withKey: input)
+        .catchErrorJustReturn(User())
+        .map { $0.hasAuthenticated }
+    }
+  }()
   
   
 }

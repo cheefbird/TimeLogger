@@ -45,11 +45,11 @@ class APIKey: TeamworkCredential {
   /// Indicates if the current stored apiKey has been used to authenticate successfully.
   var isAuthentic: Bool {
     get {
-      return UserDefaults.standard.bool(forKey: "HasAuthenticatedInTeamworkApp")
+      return UserDefaults.standard.bool(forKey: "HasAuthenticTeamworkKey")
     }
     
     set {
-      UserDefaults.standard.set(newValue, forKey: "HasAuthenticatedInTeamworkApp")
+      UserDefaults.standard.set(newValue, forKey: "HasAuthenticTeamworkKey")
     }
   }
   

@@ -24,36 +24,20 @@ struct AuthenticationService: AuthenticationServiceType {
     print("AuthenticationService initialized")
   }
   
-  //  var apiKey: APIKey
+  let disposeBag = DisposeBag()
   
-  //  var hasAuthenticated: Bool {
-  //    let status = APIKey.sharedInstance.isAuthentic
-  //    return status
-  //  }
-  
-  func loadUser() -> Observable<User> {
-    let user = User.retrieveSavedUser()
-    guard user.id > 0 else { return .error(TeamworkServiceError.existingUserLoadFailed("No stored user")) }
-    
-    return .just(user)
-    
-  }
   
   @discardableResult
   func authenticateUser(withKey key: String) -> Observable<User> {
+    
+    guard key != "None" else { return .error(TeamworkServiceError.authenticationFailed(key: key)) }
     
     let savedUser = withRealm("save new user") { realm -> Observable<User> in
       
       // This requests auth info using the key value. It will only ever return if the request succeeds, so we need to figure out bad requests.
       let user = RxAlamofire.requestJSON(TeamworkRouter.authenticate(key))
-        .subscribeOn(MainScheduler.instance)
         .filter { response, _ in
-          guard 200..<300 ~= response.statusCode else {
-            throw TeamworkServiceError.authenticationFailed(key: key)
-          }
-          
-          return true
-          
+          return 200..<300 ~= response.statusCode
         }
         .map { _, data -> JSON in
           let json = data as! [String: Any]
@@ -62,15 +46,13 @@ struct AuthenticationService: AuthenticationServiceType {
           return JSON(account)
         }
         .map { account -> User in
-          let newUser = User(fromJSON: account)
+          return User(fromJSON: account)
+        }
+        .do(onNext: { newUser in
           try realm.write {
             realm.add(newUser, update: true)
           }
-          
-          return newUser
-        }
-      
-      
+        })
       return user
     }
     

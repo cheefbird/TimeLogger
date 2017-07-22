@@ -45,12 +45,28 @@ class User: Object {
     return "id"
   }
   
-  // MARK: - Authenticated User
-  static func retrieveSavedUser(withID userId: Int = APIKey.sharedInstance.uniqueID) -> User {
-    let realm = try! Realm()
-    return realm.object(ofType: User.self, forPrimaryKey: userId) ?? User()
+  
+  // MARK: - Computed Properties
+  var fullName: String {
+    return "\(firstName) \(lastName)"
   }
   
+  
+  // MARK: - Static Methods
+  static func existing() -> User? {
+    
+    let userId = APIKey.sharedInstance.uniqueID
+    
+    guard userId != 0 else { return nil }
+    
+    let realm = try! Realm()
+    
+    let result = realm.objects(User.self)
+      .filter("hasAuthenticated = true")
+    
+    return result.first
+  }
+
   
   
 }

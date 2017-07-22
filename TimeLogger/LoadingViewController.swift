@@ -17,11 +17,12 @@ class LoadingViewController: UIViewController, BindableType {
   @IBOutlet weak var statusLabel: UILabel!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   
+  
+  // MARK: - Properties
   var viewModel: LoadingViewModel!
   let disposeBag = DisposeBag()
   
-  // MARK: - Properties
-  
+  let navigationDelayTime = RxTimeInterval() + 3
   
   
   
@@ -29,24 +30,9 @@ class LoadingViewController: UIViewController, BindableType {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    statusLabel.text = "Loading ..."
     activityIndicator.startAnimating()
     
-    let status = viewModel.authStatus.asObservable().share()
-    
-    status
-      .filter { $0 }
-      .subscribe(onNext: { [weak self] _ in
-        self?.viewModel.presentLogin()
-      })
-      .disposed(by: disposeBag)
-    
-    status
-      .filter { !$0 }
-      .subscribe(onNext: { [weak self] _ in
-        self?.viewModel.showMainTab()
-      })
-      .disposed(by: disposeBag)
+
     
   }
   
@@ -57,10 +43,28 @@ class LoadingViewController: UIViewController, BindableType {
   
   func bindViewModel() {
     
-    
-    
+    viewModel.loadingText.asDriver()
+      .drive(statusLabel.rx.text)
+      .disposed(by: disposeBag)
+
+    viewModel.authStatus
+      .subscribeOn(MainScheduler.instance)
+      .delaySubscription(navigationDelayTime, scheduler: MainScheduler.instance)
+      .subscribe(onNext: { status in
+        print("Authentication status: \(status)")
+        guard status else {
+          self.viewModel.presentLogin()
+          return
+        }
+        print("ALERT ** TRYING TO LOAD TAB BAR ** ALERT")
+      })
+      .disposed(by: disposeBag)
     
   }
+  
+  
+  
+  
   
   // MARK: - Segues
   @IBAction func returnToLoadingView(segue: UIStoryboardSegue) {
