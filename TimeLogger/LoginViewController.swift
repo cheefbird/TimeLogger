@@ -18,7 +18,6 @@ class LoginViewController: UIViewController, BindableType {
   @IBOutlet weak var statusLabel: UILabel!
   @IBOutlet weak var apiKeyTextField: UITextField!
   @IBOutlet weak var loginButton: UIButton!
-  @IBOutlet weak var loadingView: UIView!
   @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
   
   
@@ -33,9 +32,10 @@ class LoginViewController: UIViewController, BindableType {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    
-    
+  }
+  
+  deinit {
+    print("*** LoginViewController Deinitialized ***")
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -49,7 +49,14 @@ class LoginViewController: UIViewController, BindableType {
       .drive(statusLabel.rx.text)
       .disposed(by: disposeBag)
     
+    viewModel.running.asDriver()
+      .drive(loadingIndicator.rx.isAnimating)
+      .disposed(by: disposeBag)
+    
     loginButton.rx.tap
+      .do(onNext: { [weak self] in
+        self?.viewModel.running.value = true
+      })
       .withLatestFrom(apiKeyTextField.rx.text.orEmpty)
       .filter { $0.characters.count > 0 }
       .subscribe(viewModel.loginAction.inputs)

@@ -37,6 +37,8 @@ class User: Object {
     
     hasAuthenticated = true
     
+    APIKey.sharedInstance.uniqueID = numberID
+    
   }
   
   

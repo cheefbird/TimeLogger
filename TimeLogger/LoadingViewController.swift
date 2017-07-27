@@ -31,9 +31,11 @@ class LoadingViewController: UIViewController, BindableType {
     super.viewDidLoad()
     
     activityIndicator.startAnimating()
-    
 
-    
+  }
+  
+  deinit {
+    print("** ALERT: LoadingViewController DEINITIALIZED :ALERT **")
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -56,7 +58,13 @@ class LoadingViewController: UIViewController, BindableType {
           self.viewModel.presentLogin()
           return
         }
-        print("ALERT ** TRYING TO LOAD TAB BAR ** ALERT")
+        guard self.presentedViewController == nil else {
+          print("ALERT: LoadingViewController's presented VC wasn't nil -- couldn't try loading tab")
+          return
+        }
+        print("ALERT ** TRYING TO LOAD TAB BAR FROM LoadingViewController ** ALERT")
+        self.viewModel.loginSuccessful.execute()
+//        self.viewModel.presentMain()
       })
       .disposed(by: disposeBag)
     

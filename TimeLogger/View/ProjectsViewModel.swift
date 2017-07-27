@@ -9,10 +9,12 @@
 import Foundation
 import RealmSwift
 
-struct ProjectsViewModel {
+class ProjectsViewModel {
   
   let sceneCoordinator: SceneCoordinatorType
   let projectService: ProjectServiceType
+  
+  
   
   
   init(sceneCoordinator: SceneCoordinatorType, projectService: ProjectServiceType) {

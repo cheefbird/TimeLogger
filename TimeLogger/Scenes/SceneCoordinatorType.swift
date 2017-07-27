@@ -17,7 +17,6 @@ protocol SceneCoordinatorType {
   
   
   // MARK: - Properties
-//  var mainStoryboard: UIStoryboard { get }
   
   
   // MARK: - Methods
@@ -30,6 +29,10 @@ protocol SceneCoordinatorType {
   @discardableResult
   func pop(animated: Bool) -> Observable<Void>
   
+//  @discardableResult
+//  func showMainTabBar() -> Observable<Void>
+  
+  
 }
 
 
@@ -40,5 +43,6 @@ extension SceneCoordinatorType {
   func pop() -> Observable<Void> {
     return pop(animated: true)
   }
+
 
 }

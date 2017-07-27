@@ -13,13 +13,18 @@ import RxCocoa
 
 class SceneCoordinator: SceneCoordinatorType {
   
+  
   fileprivate var window: UIWindow
   fileprivate var currentViewController: UIViewController
+  
+  
   
   required init(window: UIWindow) {
     self.window = window
     currentViewController = window.rootViewController!
   }
+  
+  
   
   static func actualViewController(for viewController: UIViewController) -> UIViewController {
     
@@ -28,8 +33,8 @@ class SceneCoordinator: SceneCoordinatorType {
     } else {
       return viewController
     }
-    
   }
+  
   
   
   @discardableResult
@@ -60,6 +65,7 @@ class SceneCoordinator: SceneCoordinatorType {
       navigationController.pushViewController(viewController, animated: true)
       currentViewController = SceneCoordinator.actualViewController(for: viewController)
       
+      
     case .modal:
       currentViewController.present(viewController, animated: true) {
         subject.onCompleted()
@@ -72,6 +78,7 @@ class SceneCoordinator: SceneCoordinatorType {
       .ignoreElements()
     
   }
+  
   
   
   @discardableResult
@@ -110,6 +117,15 @@ class SceneCoordinator: SceneCoordinatorType {
     
   }
   
+  
+  
+//  @discardableResult
+//  func showMainTabBar() -> Observable<Void> {
+//    let subject = PublishSubject<Void>()
+//    
+//    
+//    
+//  }
   
 }
 

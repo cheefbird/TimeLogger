@@ -27,7 +27,12 @@ extension Scene {
       
     case .projects(_):
       let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+      
       viewController.selectedIndex = 0
+//      
+//      guard let projectsVC = viewController.viewControllers?[0] as? ProjectsViewController else { return viewController }
+//      
+//      projectsVC.bindViewModel(using: viewModel)
       
       return viewController
       

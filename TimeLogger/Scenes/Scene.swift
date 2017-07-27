@@ -13,7 +13,7 @@ enum Scene {
   
   case loading(LoadingViewModel)
   case login(LoginViewModel)
-  case projects(ProjectsViewModel)
+  case projects()
   
 }
 

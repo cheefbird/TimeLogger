@@ -6,8 +6,8 @@ target 'TimeLogger' do
   use_frameworks!
 
   # Pods for TimeLogger
-  pod 'RxSwift'
-  pod 'RxCocoa'
+  pod 'RxSwift', :inhibit_warnings => true
+  pod 'RxCocoa', :inhibit_warnings => true
   pod 'RxAlamofire'
   pod 'Alamofire'
   pod 'SwiftyJSON'

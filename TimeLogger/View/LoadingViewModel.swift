@@ -21,6 +21,7 @@ class LoadingViewModel {
   let disposeBag = DisposeBag()
   
   let loadingText = Variable<String>("Loading ...")
+//  let authStatus = Variable<Bool>(APIKey.sharedInstance.isAuthentic)
   
   
   // MARK: - Init
@@ -35,11 +36,8 @@ class LoadingViewModel {
   
   // MARK: - Computed Properties
   var authStatus: Observable<Bool> {
-    return self.authenticationService.authenticateUser(withKey: APIKey.sharedInstance.value)
-      .catchErrorJustReturn(User())
-      .map { return $0.hasAuthenticated }
+    return .just(APIKey.sharedInstance.isAuthentic)
   }
-  
   
   // MARK: - Methods
   
@@ -49,11 +47,25 @@ class LoadingViewModel {
     
     let loginViewModel = LoginViewModel(
       sceneCoordinator: self.sceneCoordinator,
-      authService: self.authenticationService, loginAction: tryLogin)
+      authService: self.authenticationService,
+      loginAction: tryLogin,
+      onSuccessfulLogin: loginSuccessful)
     
     sceneCoordinator.transition(to: Scene.login(loginViewModel), type: .modal)
     
   }
+  
+  
+//  func presentMain() {
+//
+//    let projectService = ProjectService()
+//
+//    let projectsViewModel = ProjectsViewModel(sceneCoordinator: self.sceneCoordinator, projectService: projectService)
+//
+//    sceneCoordinator.transition(to: Scene.projects(projectsViewModel), type: .root)
+//
+//  }
+  
   
   lazy var tryLogin: Action<String, Bool> = {
     return Action { input in
@@ -64,6 +76,13 @@ class LoadingViewModel {
   }()
   
   
+  
+  lazy var loginSuccessful: CocoaAction = { this in
+    return CocoaAction { _ in
+      return self.sceneCoordinator.transition(to: Scene.projects(), type: .root)
+    }
+  }(self)
+
 }
 
 

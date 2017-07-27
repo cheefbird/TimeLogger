@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kAP-s6-fLZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="kAP-s6-fLZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,7 +49,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fP-HT-93P">
-                                <rect key="frame" x="91" y="334" width="193" height="30"/>
+                                <rect key="frame" x="91" y="337" width="193" height="30"/>
                                 <color key="backgroundColor" red="0.96545141940000001" green="0.79766589399999999" blue="0.0041561867110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="1" alpha="0.84460616440000003" colorSpace="calibratedWhite"/>
@@ -60,18 +60,22 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Teamwork API Key is required to use this app. Login to your account to get yours." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="711-um-DwD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Teamwork API Key is required to use this app. Login to your account to get yours." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="711-um-DwD">
                                 <rect key="frame" x="30" y="620.5" width="315" height="26.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                 <color key="textColor" white="1" alpha="0.84460616440000003" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FuR-d4-UhS">
+                                <rect key="frame" x="168.5" y="292" width="37" height="37"/>
+                                <color key="color" red="0.96545141940000001" green="0.79766589399999999" blue="0.0041561867110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7fP-HT-93P" firstAttribute="top" secondItem="FuR-d4-UhS" secondAttribute="bottom" constant="8" id="1gy-Rg-GnM"/>
                             <constraint firstItem="k7S-ar-Mjh" firstAttribute="centerX" secondItem="cdB-i9-q3f" secondAttribute="centerX" id="3AO-z7-Kib"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mcz-tp-p53" secondAttribute="trailing" constant="24" id="3Aw-uk-eWP"/>
-                            <constraint firstItem="7fP-HT-93P" firstAttribute="top" secondItem="mcz-tp-p53" secondAttribute="bottom" constant="50" id="3fv-3J-pKd"/>
                             <constraint firstItem="Jbv-se-Yyy" firstAttribute="top" secondItem="cdB-i9-q3f" secondAttribute="top" constant="100" id="CcX-lh-3Nb"/>
                             <constraint firstItem="k7S-ar-Mjh" firstAttribute="top" secondItem="Jbv-se-Yyy" secondAttribute="bottom" constant="30" id="GTb-ES-y0r"/>
                             <constraint firstItem="mcz-tp-p53" firstAttribute="leading" secondItem="cdB-i9-q3f" secondAttribute="leadingMargin" constant="24" id="Gxu-0h-CDw"/>
@@ -85,10 +89,13 @@
                             <constraint firstItem="k7S-ar-Mjh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cdB-i9-q3f" secondAttribute="leading" constant="60" id="nsR-0L-03M"/>
                             <constraint firstItem="711-um-DwD" firstAttribute="leading" secondItem="cdB-i9-q3f" secondAttribute="leading" constant="30" id="qEv-61-Czw"/>
                             <constraint firstItem="mcz-tp-p53" firstAttribute="top" secondItem="k7S-ar-Mjh" secondAttribute="bottom" constant="20" id="qZW-v7-7cm"/>
+                            <constraint firstItem="FuR-d4-UhS" firstAttribute="top" secondItem="mcz-tp-p53" secondAttribute="bottom" constant="8" id="u4F-lY-rIS"/>
+                            <constraint firstItem="FuR-d4-UhS" firstAttribute="centerX" secondItem="cdB-i9-q3f" secondAttribute="centerX" id="w02-lf-ebx"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="apiKeyTextField" destination="mcz-tp-p53" id="wy5-4L-CiN"/>
+                        <outlet property="loadingIndicator" destination="FuR-d4-UhS" id="NWs-PF-YTP"/>
                         <outlet property="loginButton" destination="7fP-HT-93P" id="eas-4M-amm"/>
                         <outlet property="statusLabel" destination="k7S-ar-Mjh" id="Bcz-ZU-fcQ"/>
                     </connections>
@@ -110,13 +117,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g11-gf-Jpq">
-                                <rect key="frame" x="16" y="28" width="343" height="33.5"/>
+                                <rect key="frame" x="16" y="28" width="343" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" red="0.96545141940000001" green="0.79766589399999999" blue="0.0041561867110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="lEc-A5-wP1">
-                                <rect key="frame" x="16" y="87" width="343" height="150.5"/>
+                                <rect key="frame" x="16" y="85" width="343" height="150.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFt-2q-E7h">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -151,7 +158,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfr-Rv-8qX">
-                                <rect key="frame" x="91" y="288" width="193" height="30"/>
+                                <rect key="frame" x="91" y="286" width="193" height="30"/>
                                 <color key="backgroundColor" red="0.96545141940000001" green="0.79766589399999999" blue="0.0041561867110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -245,22 +252,22 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="2GF-qb-IAK">
-                                <rect key="frame" x="76" y="140" width="223" height="113"/>
+                                <rect key="frame" x="76" y="140" width="223" height="111"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeLogger" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQt-x7-Zo1">
-                                        <rect key="frame" x="38.5" y="0.0" width="146" height="33.5"/>
+                                        <rect key="frame" x="44.5" y="0.0" width="134.5" height="31.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" red="0.96545141940000001" green="0.79766589399999999" blue="0.0041561867110000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="statusLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7k-wi-n6b">
-                                        <rect key="frame" x="67.5" y="44.5" width="88" height="20.5"/>
+                                        <rect key="frame" x="-76" y="42.5" width="0.0" height="20.5"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="HVZ-Iu-nRR">
-                                        <rect key="frame" x="93" y="76" width="37" height="37"/>
+                                        <rect key="frame" x="93" y="74" width="37" height="37"/>
                                         <color key="color" red="1" green="0.83255577401797043" blue="0.0120876655952461" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </activityIndicatorView>
                                 </subviews>

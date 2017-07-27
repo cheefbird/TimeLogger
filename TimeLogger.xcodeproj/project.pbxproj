@@ -37,8 +37,8 @@
 		06DB6F101EB8144000FF1B24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */; };
 		06E0E1941F21C20800B8BD94 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E0E1931F21C20800B8BD94 /* ProjectsViewController.swift */; };
 		06E7CA1A1EE1466D000114C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7CA191EE1466D000114C4 /* User.swift */; };
-		095E758E289D95214047D130 /* Pods_TimeLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 400E2FC18BE2FFFB7C579386 /* Pods_TimeLoggerTests.framework */; };
-		1B918EC82DC7B9668CF79B83 /* Pods_TimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC1859B58F50713045D46C8 /* Pods_TimeLogger.framework */; };
+		290BD1FBA643C2AF64C4D15F /* Pods_TimeLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D255463D4672AB5E47888A0 /* Pods_TimeLogger.framework */; };
+		62B3D9D7ABD596BE6D2BFF12 /* Pods_TimeLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EF50BD3A57285086A19161 /* Pods_TimeLoggerTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,12 +86,12 @@
 		06DB6F1C1EB8144000FF1B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06E0E1931F21C20800B8BD94 /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProjectsViewController.swift; path = View/ProjectsViewController.swift; sourceTree = "<group>"; };
 		06E7CA191EE1466D000114C4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		1C08041404B33FC0258AB155 /* Pods-TimeLoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLoggerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2BC1859B58F50713045D46C8 /* Pods_TimeLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		400E2FC18BE2FFFB7C579386 /* Pods_TimeLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6481F9CF1835668DDE536F29 /* Pods-TimeLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger.release.xcconfig"; sourceTree = "<group>"; };
-		71E84B8E04337153F59BFE79 /* Pods-TimeLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
-		CFB897850DA764DCE34FF0BB /* Pods-TimeLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger.debug.xcconfig"; sourceTree = "<group>"; };
+		2D255463D4672AB5E47888A0 /* Pods_TimeLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		38084BFC4901334A64FC311C /* Pods-TimeLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
+		461BA2BC2D5230366AB203B4 /* Pods-TimeLoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLoggerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7D1047C52BC8348772A95BFE /* Pods-TimeLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLogger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger.debug.xcconfig"; sourceTree = "<group>"; };
+		88EF50BD3A57285086A19161 /* Pods_TimeLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimeLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7EB1E3B692CF8DE4EFDA05D /* Pods-TimeLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLogger.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B918EC82DC7B9668CF79B83 /* Pods_TimeLogger.framework in Frameworks */,
+				290BD1FBA643C2AF64C4D15F /* Pods_TimeLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				095E758E289D95214047D130 /* Pods_TimeLoggerTests.framework in Frameworks */,
+				62B3D9D7ABD596BE6D2BFF12 /* Pods_TimeLoggerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,8 +236,8 @@
 				06DB6F011EB8144000FF1B24 /* TimeLogger */,
 				06DB6F191EB8144000FF1B24 /* TimeLoggerTests */,
 				06DB6F001EB8144000FF1B24 /* Products */,
-				0A60511350D92624E0567284 /* Pods */,
-				6D90DBCD9B7390F65786AF57 /* Frameworks */,
+				3C27745D905F326C56418F0A /* Pods */,
+				88D6426DC7AD1AE51445C924 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,22 +276,22 @@
 			path = TimeLoggerTests;
 			sourceTree = "<group>";
 		};
-		0A60511350D92624E0567284 /* Pods */ = {
+		3C27745D905F326C56418F0A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CFB897850DA764DCE34FF0BB /* Pods-TimeLogger.debug.xcconfig */,
-				6481F9CF1835668DDE536F29 /* Pods-TimeLogger.release.xcconfig */,
-				1C08041404B33FC0258AB155 /* Pods-TimeLoggerTests.debug.xcconfig */,
-				71E84B8E04337153F59BFE79 /* Pods-TimeLoggerTests.release.xcconfig */,
+				7D1047C52BC8348772A95BFE /* Pods-TimeLogger.debug.xcconfig */,
+				A7EB1E3B692CF8DE4EFDA05D /* Pods-TimeLogger.release.xcconfig */,
+				461BA2BC2D5230366AB203B4 /* Pods-TimeLoggerTests.debug.xcconfig */,
+				38084BFC4901334A64FC311C /* Pods-TimeLoggerTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		6D90DBCD9B7390F65786AF57 /* Frameworks */ = {
+		88D6426DC7AD1AE51445C924 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2BC1859B58F50713045D46C8 /* Pods_TimeLogger.framework */,
-				400E2FC18BE2FFFB7C579386 /* Pods_TimeLoggerTests.framework */,
+				2D255463D4672AB5E47888A0 /* Pods_TimeLogger.framework */,
+				88EF50BD3A57285086A19161 /* Pods_TimeLoggerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -303,12 +303,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06DB6F1F1EB8144000FF1B24 /* Build configuration list for PBXNativeTarget "TimeLogger" */;
 			buildPhases = (
-				8186231810E6790C51CAA77A /* [CP] Check Pods Manifest.lock */,
+				40130ADB6BE98C6CD699B29B /* [CP] Check Pods Manifest.lock */,
 				06DB6EFB1EB8144000FF1B24 /* Sources */,
 				06DB6EFC1EB8144000FF1B24 /* Frameworks */,
 				06DB6EFD1EB8144000FF1B24 /* Resources */,
-				F909264EDEEABE4C8501AC67 /* [CP] Embed Pods Frameworks */,
-				84592E84DD0D838060EB457E /* [CP] Copy Pods Resources */,
+				850842D06562C9B200C6762D /* [CP] Embed Pods Frameworks */,
+				4E326267DAD6DAA5529581E4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,12 +323,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06DB6F221EB8144000FF1B24 /* Build configuration list for PBXNativeTarget "TimeLoggerTests" */;
 			buildPhases = (
-				8D572962F1DF3EE86F5A575B /* [CP] Check Pods Manifest.lock */,
+				4E0E0B61073EA854628FF5B5 /* [CP] Check Pods Manifest.lock */,
 				06DB6F121EB8144000FF1B24 /* Sources */,
 				06DB6F131EB8144000FF1B24 /* Frameworks */,
 				06DB6F141EB8144000FF1B24 /* Resources */,
-				0017A7F15C31F44D212D8810 /* [CP] Embed Pods Frameworks */,
-				BB797DECDEEDA533E8C4C08D /* [CP] Copy Pods Resources */,
+				A8046D5B992A5599367C6BB8 /* [CP] Embed Pods Frameworks */,
+				21B88627189ECA39845A437C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -404,67 +404,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0017A7F15C31F44D212D8810 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8186231810E6790C51CAA77A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		84592E84DD0D838060EB457E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D572962F1DF3EE86F5A575B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BB797DECDEEDA533E8C4C08D /* [CP] Copy Pods Resources */ = {
+		21B88627189ECA39845A437C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -479,19 +419,111 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F909264EDEEABE4C8501AC67 /* [CP] Embed Pods Frameworks */ = {
+		40130ADB6BE98C6CD699B29B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimeLogger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E0E0B61073EA854628FF5B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimeLoggerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E326267DAD6DAA5529581E4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		850842D06562C9B200C6762D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLogger/Pods-TimeLogger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8046D5B992A5599367C6BB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TimeLoggerTests/Pods-TimeLoggerTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -665,7 +697,7 @@
 		};
 		06DB6F201EB8144000FF1B24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CFB897850DA764DCE34FF0BB /* Pods-TimeLogger.debug.xcconfig */;
+			baseConfigurationReference = 7D1047C52BC8348772A95BFE /* Pods-TimeLogger.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -681,7 +713,7 @@
 		};
 		06DB6F211EB8144000FF1B24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6481F9CF1835668DDE536F29 /* Pods-TimeLogger.release.xcconfig */;
+			baseConfigurationReference = A7EB1E3B692CF8DE4EFDA05D /* Pods-TimeLogger.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -697,7 +729,7 @@
 		};
 		06DB6F231EB8144000FF1B24 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C08041404B33FC0258AB155 /* Pods-TimeLoggerTests.debug.xcconfig */;
+			baseConfigurationReference = 461BA2BC2D5230366AB203B4 /* Pods-TimeLoggerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -715,7 +747,7 @@
 		};
 		06DB6F241EB8144000FF1B24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71E84B8E04337153F59BFE79 /* Pods-TimeLoggerTests.release.xcconfig */;
+			baseConfigurationReference = 38084BFC4901334A64FC311C /* Pods-TimeLoggerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
