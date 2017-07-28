@@ -38,8 +38,9 @@ class SettingsViewController: UIViewController {
     
     authenticationService = AuthenticationService()
     
-    authenticatedUser = User.existing()
+    authenticatedUser = User.existing() ?? User()
     
+    configureView(using: authenticatedUser)
     
   }
   
