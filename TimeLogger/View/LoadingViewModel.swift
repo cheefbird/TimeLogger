@@ -79,7 +79,9 @@ class LoadingViewModel {
   
   lazy var loginSuccessful: CocoaAction = { this in
     return CocoaAction { _ in
-      return self.sceneCoordinator.transition(to: Scene.projects(), type: .root)
+      let tabBarViewModel = TabBarViewModel(sceneCoordinator: this.sceneCoordinator)
+      
+      return self.sceneCoordinator.transition(to: Scene.mainTabBar(tabBarViewModel), type: .root)
     }
   }(self)
 

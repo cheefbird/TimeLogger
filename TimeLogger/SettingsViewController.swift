@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import RxSwift
 
 class SettingsViewController: UIViewController {
   
@@ -21,18 +22,23 @@ class SettingsViewController: UIViewController {
   
   
   // MARK: - Properies
-  var authenticationService: AuthenticationService!
+  private var authenticationService: AuthenticationService!
   private var authenticatedUser: User!
+  private var sceneCoordinator: SceneCoordinatorType!
   
+  let disposeBag = DisposeBag()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    if let delegate = UIApplication.shared.delegate as? AppDelegate,
+      let appWindow = delegate.window {
+      sceneCoordinator = SceneCoordinator(window: appWindow)
+    }
     
-    let realm = try! Realm()
-    authenticatedUser = realm.objects(User.self).first
+    authenticationService = AuthenticationService()
     
-    configureView(using: authenticatedUser)
+    authenticatedUser = User.existing()
     
     
   }
@@ -51,11 +57,23 @@ class SettingsViewController: UIViewController {
   // MARK: - Actions
   @IBAction private func logout(_ sender: AnyObject?) {
     
-    
-//    authenticationService.clearUserInfo()
-//    performSegue(withIdentifier: "returnToLoadingView", sender: nil)
-    
+    authenticationService.logoutUser()
+      .observeOn(MainScheduler.instance)
+      .map { return $0.hasAuthenticated }
+      .do(onNext: { authStatus in
+        guard authStatus else { return }
+        self.showDismissableAlert(self, title: "Uh Oh!", message: "Logout failed!")
+      }, onError: { _ in
+        self.showDismissableAlert(self, title: "Uh OH!", message: "Error when trying to log out!")
+      })
+      .subscribe(onNext: { authStatus in
+        guard !authStatus else { return }
+        let loadingViewModel = LoadingViewModel(coordinator: self.sceneCoordinator, authService: self.authenticationService)
+        self.sceneCoordinator.transition(to: Scene.loading(loadingViewModel), type: .root)
+      }, onError: { _ in
+        print("ALERT: Error when attempting to log out!")
+      })
+      .disposed(by: disposeBag)
+
   }
-  
-  
 }

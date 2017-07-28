@@ -42,13 +42,28 @@ class SceneCoordinator: SceneCoordinatorType {
     
     let subject = PublishSubject<Void>()
     let viewController = scene.viewController()
+    let rootVC = window.rootViewController!
     
     switch type {
       
     case .root:
       currentViewController = SceneCoordinator.actualViewController(for: viewController)
-      window.rootViewController = viewController
-      subject.onCompleted()
+      
+      viewController.view.frame = rootVC.view.frame
+      viewController.view.layoutIfNeeded()
+      
+      UIView.transition(
+        with: window,
+        duration: 1.0,
+        options: .transitionFlipFromRight,
+        animations: { [weak self] in
+          self?.window.rootViewController = viewController
+          },
+        completion: { completed in
+          guard completed else { return }
+          subject.onCompleted()
+      })
+
       
       
     case .push:

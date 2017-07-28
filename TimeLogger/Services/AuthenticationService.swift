@@ -64,16 +64,26 @@ struct AuthenticationService: AuthenticationServiceType {
   
   
   @discardableResult
-  func logoutUser() -> Observable<Void> {
-    return .just()
+  func logoutUser() -> Observable<User> {
+    let user = withRealm("delete user") { realm -> Observable<User> in
+      
+      guard let user = realm.object(ofType: User.self, forPrimaryKey: APIKey.sharedInstance.uniqueID) else {
+        return .error(TimeLoggerError.userIdMismatch())
+      }
+      
+      try realm.write {
+        realm.delete(user)
+      }
+      
+      APIKey.clear()
+      
+      return .just(User())
+      
+    }
+    
+    return user!
+    
   }
-  
-  
-  
-  
-  
-  
-  
 }
 
 

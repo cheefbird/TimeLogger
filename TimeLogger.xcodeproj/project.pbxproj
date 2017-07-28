@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0606589B1EED2DAB00980E2F /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0606589A1EED2DAB00980E2F /* UIViewController+Alerts.swift */; };
+		060F8C6B1F2AA98B00D1AA90 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F8C6A1F2AA98B00D1AA90 /* TabBarViewModel.swift */; };
 		06129DF91EFFACCF00639ECF /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06129DF81EFFACCF00639ECF /* Scene.swift */; };
 		06129DFD1EFFAD6700639ECF /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06129DFC1EFFAD6700639ECF /* BindableType.swift */; };
 		06129DFF1EFFB06F00639ECF /* SceneCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06129DFE1EFFB06F00639ECF /* SceneCoordinatorType.swift */; };
@@ -23,6 +24,7 @@
 		066932891EDBEDB300E09963 /* TeamworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066932881EDBEDB300E09963 /* TeamworkRouter.swift */; };
 		0669328B1EDBEDD000E09963 /* TeamworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669328A1EDBEDD000E09963 /* TeamworkError.swift */; };
 		0669328E1EDCDE9800E09963 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669328D1EDCDE9800E09963 /* AuthenticationService.swift */; };
+		0669A5C01F2AB65B00A77883 /* TimeLoggerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0669A5BF1F2AB65B00A77883 /* TimeLoggerError.swift */; };
 		069427C31EE2893F00FB933F /* AuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069427C21EE2893F00FB933F /* AuthenticationServiceTests.swift */; };
 		069427C61EE2A1B000FB933F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069427C51EE2A1B000FB933F /* SettingsViewController.swift */; };
 		06B099801F048B7F0036D14A /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B0997F1F048B7F0036D14A /* SceneCoordinator.swift */; };
@@ -31,6 +33,7 @@
 		06B14D411F0A181100C2EC42 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B14D401F0A181100C2EC42 /* LoginViewModel.swift */; };
 		06BF174A1F06181D00EDDCB7 /* TeamworkCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF17491F06181D00EDDCB7 /* TeamworkCredential.swift */; };
 		06BF174C1F06202100EDDCB7 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BF174B1F06202100EDDCB7 /* APIKey.swift */; };
+		06CD98EA1F2A98E2003AEA95 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CD98E91F2A98E2003AEA95 /* MainTabBarController.swift */; };
 		06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DB6F021EB8144000FF1B24 /* AppDelegate.swift */; };
 		06DB6F081EB8144000FF1B24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F061EB8144000FF1B24 /* Main.storyboard */; };
 		06DB6F0D1EB8144000FF1B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06DB6F0C1EB8144000FF1B24 /* Assets.xcassets */; };
@@ -53,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		0606589A1EED2DAB00980E2F /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Alerts.swift"; path = "Helper/UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		060F8C6A1F2AA98B00D1AA90 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabBarViewModel.swift; path = View/TabBarViewModel.swift; sourceTree = "<group>"; };
 		06129DF81EFFACCF00639ECF /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Scene.swift; path = Scenes/Scene.swift; sourceTree = "<group>"; };
 		06129DFC1EFFAD6700639ECF /* BindableType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BindableType.swift; path = Model/BindableType.swift; sourceTree = "<group>"; };
 		06129DFE1EFFB06F00639ECF /* SceneCoordinatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneCoordinatorType.swift; path = Scenes/SceneCoordinatorType.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 		066932881EDBEDB300E09963 /* TeamworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamworkRouter.swift; path = TeamworkAPI/TeamworkRouter.swift; sourceTree = "<group>"; };
 		0669328A1EDBEDD000E09963 /* TeamworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamworkError.swift; path = TeamworkAPI/TeamworkError.swift; sourceTree = "<group>"; };
 		0669328D1EDCDE9800E09963 /* AuthenticationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationService.swift; path = Services/AuthenticationService.swift; sourceTree = "<group>"; };
+		0669A5BF1F2AB65B00A77883 /* TimeLoggerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeLoggerError.swift; path = Error/TimeLoggerError.swift; sourceTree = "<group>"; };
 		069427C21EE2893F00FB933F /* AuthenticationServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationServiceTests.swift; path = Services/AuthenticationServiceTests.swift; sourceTree = "<group>"; };
 		069427C51EE2A1B000FB933F /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		06B0997F1F048B7F0036D14A /* SceneCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneCoordinator.swift; path = Scenes/SceneCoordinator.swift; sourceTree = "<group>"; };
@@ -76,6 +81,7 @@
 		06B14D401F0A181100C2EC42 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewModel.swift; path = View/LoginViewModel.swift; sourceTree = "<group>"; };
 		06BF17491F06181D00EDDCB7 /* TeamworkCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TeamworkCredential.swift; path = Protocols/TeamworkCredential.swift; sourceTree = "<group>"; };
 		06BF174B1F06202100EDDCB7 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = Model/APIKey.swift; sourceTree = "<group>"; };
+		06CD98E91F2A98E2003AEA95 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = View/MainTabBarController.swift; sourceTree = "<group>"; };
 		06DB6EFF1EB8144000FF1B24 /* TimeLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06DB6F021EB8144000FF1B24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06DB6F071EB8144000FF1B24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +127,15 @@
 				06DB6F0E1EB8144000FF1B24 /* LaunchScreen.storyboard */,
 			);
 			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		060F8C691F2AA97100D1AA90 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				06CD98E91F2A98E2003AEA95 /* MainTabBarController.swift */,
+				060F8C6A1F2AA98B00D1AA90 /* TabBarViewModel.swift */,
+			);
+			name = MainTabBar;
 			sourceTree = "<group>";
 		};
 		06129DFA1EFFACD300639ECF /* Scene */ = {
@@ -185,15 +200,24 @@
 			isa = PBXGroup;
 			children = (
 				0669328D1EDCDE9800E09963 /* AuthenticationService.swift */,
-				06B14D3D1F0A064A00C2EC42 /* TeamworkServiceError.swift */,
 				061510431F0E19C0003783B7 /* ProjectService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
 		};
+		0669A5BE1F2AB62E00A77883 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				06B14D3D1F0A064A00C2EC42 /* TeamworkServiceError.swift */,
+				0669A5BF1F2AB65B00A77883 /* TimeLoggerError.swift */,
+			);
+			name = Error;
+			sourceTree = "<group>";
+		};
 		069055E31EBDB5A80043C084 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				060F8C691F2AA97100D1AA90 /* MainTabBar */,
 				0615103E1F0DFA91003783B7 /* Projects */,
 				06129DFB1EFFAD3000639ECF /* Loading */,
 				06B14D3F1F0A17F300C2EC42 /* Login */,
@@ -255,6 +279,7 @@
 			children = (
 				06DB6F021EB8144000FF1B24 /* AppDelegate.swift */,
 				063696C21EFCF954002AE6DE /* Protocols */,
+				0669A5BE1F2AB62E00A77883 /* Error */,
 				06129DFA1EFFACD300639ECF /* Scene */,
 				0669328C1EDCDE7800E09963 /* Services */,
 				069055E91EBDB7EC0043C084 /* Model */,
@@ -537,6 +562,7 @@
 				06129DFF1EFFB06F00639ECF /* SceneCoordinatorType.swift in Sources */,
 				06B14D411F0A181100C2EC42 /* LoginViewModel.swift in Sources */,
 				061510401F0DFAAA003783B7 /* ProjectsViewModel.swift in Sources */,
+				0669A5C01F2AB65B00A77883 /* TimeLoggerError.swift in Sources */,
 				066932891EDBEDB300E09963 /* TeamworkRouter.swift in Sources */,
 				066932841EDBE62600E09963 /* LoginViewController.swift in Sources */,
 				06BF174A1F06181D00EDDCB7 /* TeamworkCredential.swift in Sources */,
@@ -545,6 +571,7 @@
 				06129DFD1EFFAD6700639ECF /* BindableType.swift in Sources */,
 				069427C61EE2A1B000FB933F /* SettingsViewController.swift in Sources */,
 				06129E011EFFB12400639ECF /* SceneTransitionType.swift in Sources */,
+				060F8C6B1F2AA98B00D1AA90 /* TabBarViewModel.swift in Sources */,
 				06B099801F048B7F0036D14A /* SceneCoordinator.swift in Sources */,
 				0669328B1EDBEDD000E09963 /* TeamworkError.swift in Sources */,
 				06DB6F031EB8144000FF1B24 /* AppDelegate.swift in Sources */,
@@ -553,6 +580,7 @@
 				06B12DBB1EFCFBA10040943D /* AuthenticationServiceType.swift in Sources */,
 				065015371F076BA400CF45B4 /* TeamworkService.swift in Sources */,
 				06129E031EFFB24800639ECF /* Scene+UIViewController.swift in Sources */,
+				06CD98EA1F2A98E2003AEA95 /* MainTabBarController.swift in Sources */,
 				065334A41EE4092B009A14B5 /* LoadingViewController.swift in Sources */,
 				0669328E1EDCDE9800E09963 /* AuthenticationService.swift in Sources */,
 				061510461F0E1B48003783B7 /* ProjectServiceType.swift in Sources */,

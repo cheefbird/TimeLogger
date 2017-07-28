@@ -8,18 +8,28 @@
 
 import UIKit
 
-class ProjectsViewController: UIViewController {
+class ProjectsViewController: UIViewController, BindableType {
+
+  
   
   // MARK: - Outlets
   @IBOutlet weak var tableView: UITableView!
   
   
   // MARK: - Properties
+  var viewModel: ProjectsViewModel?
   var user: User!
   
   
+  // MARK: - Default
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+  }
+  
+  
+  //MARK: - Methods
+  func bindViewModel() {
     
   }
   

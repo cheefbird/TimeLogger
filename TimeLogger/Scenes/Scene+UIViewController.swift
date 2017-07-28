@@ -25,16 +25,13 @@ extension Scene {
       viewController.bindViewModel(using: viewModel)
       return viewController
       
-    case .projects(_):
-      let viewController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
+    case .mainTabBar(let viewModel):
+      var tabBarController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
       
-      viewController.selectedIndex = 0
-//      
-//      guard let projectsVC = viewController.viewControllers?[0] as? ProjectsViewController else { return viewController }
-//      
-//      projectsVC.bindViewModel(using: viewModel)
+      tabBarController.selectedIndex = 0
       
-      return viewController
+      
+      return tabBarController
       
     }
   }

@@ -289,10 +289,10 @@
             </objects>
             <point key="canvasLocation" x="-1119.2" y="372.86356821589209"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="aYA-1M-QkM">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="UOq-yK-Etx" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="UOq-yK-Etx" customClass="MainTabBarController" customModule="TimeLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Sox-Ng-GRZ">

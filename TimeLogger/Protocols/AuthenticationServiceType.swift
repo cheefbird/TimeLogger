@@ -32,7 +32,7 @@ protocol AuthenticationServiceType: TeamworkService {
   
   // Log out of application
   @discardableResult
-  func logoutUser() -> Observable<Void>
+  func logoutUser() -> Observable<User>
 
   
 }
