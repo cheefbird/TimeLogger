@@ -21,7 +21,7 @@ class LoadingViewModel {
   let disposeBag = DisposeBag()
   
   let loadingText = Variable<String>("Loading ...")
-//  let authStatus = Variable<Bool>(APIKey.sharedInstance.isAuthentic)
+  //  let authStatus = Variable<Bool>(APIKey.sharedInstance.isAuthentic)
   
   
   // MARK: - Init
@@ -56,15 +56,15 @@ class LoadingViewModel {
   }
   
   
-//  func presentMain() {
-//
-//    let projectService = ProjectService()
-//
-//    let projectsViewModel = ProjectsViewModel(sceneCoordinator: self.sceneCoordinator, projectService: projectService)
-//
-//    sceneCoordinator.transition(to: Scene.projects(projectsViewModel), type: .root)
-//
-//  }
+  //  func presentMain() {
+  //
+  //    let projectService = ProjectService()
+  //
+  //    let projectsViewModel = ProjectsViewModel(sceneCoordinator: self.sceneCoordinator, projectService: projectService)
+  //
+  //    sceneCoordinator.transition(to: Scene.projects(projectsViewModel), type: .root)
+  //
+  //  }
   
   
   lazy var tryLogin: Action<String, Bool> = {
@@ -72,6 +72,7 @@ class LoadingViewModel {
       return self.authenticationService.authenticateUser(withKey: input)
         .catchErrorJustReturn(User())
         .map { $0.hasAuthenticated }
+      
     }
   }()
   
@@ -82,9 +83,10 @@ class LoadingViewModel {
       let tabBarViewModel = TabBarViewModel(sceneCoordinator: this.sceneCoordinator)
       
       return self.sceneCoordinator.transition(to: Scene.mainTabBar(tabBarViewModel), type: .root)
+
     }
   }(self)
-
+  
 }
 
 

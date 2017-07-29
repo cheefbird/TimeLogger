@@ -14,6 +14,7 @@ enum TeamworkRouter: URLRequestConvertible {
   
   // MARK: - Cases
   case authenticate(String)
+  case getAllProjects
   
   
   // MARK: - URL Components
@@ -24,6 +25,11 @@ enum TeamworkRouter: URLRequestConvertible {
     switch self {
     case .authenticate:
       return "https://authenticate.teamwork.com"
+    default:
+      guard let user = User.existing(),
+        user.url.characters.count > 0 else { return "" }
+      
+      return user.url
     }
     
   }
@@ -35,6 +41,8 @@ enum TeamworkRouter: URLRequestConvertible {
     switch self {
       
     case .authenticate:
+      return .get
+    case .getAllProjects:
       return .get
       
     }
@@ -48,6 +56,8 @@ enum TeamworkRouter: URLRequestConvertible {
       
     case .authenticate:
       return "/authenticate.json"
+    case .getAllProjects:
+      return "/projects.json"
       
     }
     
@@ -61,7 +71,10 @@ enum TeamworkRouter: URLRequestConvertible {
       
     case .authenticate:
       return nil
-      
+    case .getAllProjects:
+      var params = Parameters()
+      params["includePeople"] = true
+      return params
     }
     
   }
@@ -86,7 +99,15 @@ enum TeamworkRouter: URLRequestConvertible {
         print(error.localizedDescription)
         return headers
       }
-      
+    case .getAllProjects:
+      do {
+        let encodedKey = try encode(apiKey: APIKey.sharedInstance.value)
+        headers["Authorization"] = "Basic \(encodedKey)"
+        return headers
+      } catch let error {
+        print(error.localizedDescription)
+        return headers
+      }
     }
   }
   

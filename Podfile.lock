@@ -4,11 +4,11 @@ PODS:
     - RxSwift (~> 3.4)
   - Alamofire (4.5.0)
   - KeychainAccess (3.0.2)
-  - Realm (2.8.3):
-    - Realm/Headers (= 2.8.3)
-  - Realm/Headers (2.8.3)
-  - RealmSwift (2.8.3):
-    - Realm (= 2.8.3)
+  - Realm (2.9.0):
+    - Realm/Headers (= 2.9.0)
+  - Realm/Headers (2.9.0)
+  - RealmSwift (2.9.0):
+    - Realm (= 2.9.0)
   - RxAlamofire (3.0.3):
     - RxAlamofire/Core (= 3.0.3)
   - RxAlamofire/Core (3.0.3):
@@ -39,8 +39,8 @@ SPEC CHECKSUMS:
   Action: e224bd151fe2e057f4189b4a9df0dc5d21264a9e
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   KeychainAccess: a986406022dfc7c634c691ad3bec670cc6a32002
-  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
-  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
+  Realm: f14ab1673502559cb16592ddb8f383c474c13e05
+  RealmSwift: 16ad2c187042c4934f49750375582fe508627dcb
   RxAlamofire: 5eb39188c4917ad98127c0ecb4878a61b7517003
   RxBlocking: 471315e18b87c5ed4b9d0c69a57dfdbca5c01af1
   RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
@@ -48,6 +48,6 @@ SPEC CHECKSUMS:
   RxTest: 1763765fd0e2282b0eb44c9050effdd7fe7156d4
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6ef00b72adbbceb6ad5b581d17b9fe27b4008aa1
+PODFILE CHECKSUM: e2c290e585d5721c5cc961b294efb3003fa76801
 
 COCOAPODS: 1.3.0.beta.2

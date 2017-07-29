@@ -34,6 +34,11 @@ class LoginViewController: UIViewController, BindableType {
     super.viewDidLoad()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    print("RxSwift Resources: \(RxSwift.Resources.total)")
+  }
+  
   deinit {
     print("*** LoginViewController Deinitialized ***")
   }
@@ -46,12 +51,22 @@ class LoginViewController: UIViewController, BindableType {
   func bindViewModel() {
     
     viewModel.helperText.asDriver()
+      .do(onNext: { text in
+        if text.contains("fail") {
+          self.statusLabel.textColor = UIColor.red
+        } else {
+          self.statusLabel.textColor = UIColor.lightBlack
+        }
+      })
+      .debug("Login Helper Text", trimOutput: false)
       .drive(statusLabel.rx.text)
       .disposed(by: disposeBag)
+    
     
     viewModel.running.asDriver()
       .drive(loadingIndicator.rx.isAnimating)
       .disposed(by: disposeBag)
+    
     
     loginButton.rx.tap
       .do(onNext: { [weak self] in
@@ -59,12 +74,13 @@ class LoginViewController: UIViewController, BindableType {
       })
       .withLatestFrom(apiKeyTextField.rx.text.orEmpty)
       .filter { $0.characters.count > 0 }
+      .debug("Login Key Text", trimOutput: false)
       .subscribe(viewModel.loginAction.inputs)
       .disposed(by: disposeBag)
     
     
   }
-
+  
   
   
 }

@@ -34,6 +34,11 @@ class LoadingViewController: UIViewController, BindableType {
 
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    print("RxSwift Resources: \(RxSwift.Resources.total)")
+  }
+  
   deinit {
     print("** ALERT: LoadingViewController DEINITIALIZED :ALERT **")
   }

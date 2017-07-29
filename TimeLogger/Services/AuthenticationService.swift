@@ -49,7 +49,7 @@ struct AuthenticationService: AuthenticationServiceType {
           return User(fromJSON: account)
         }
         .do(onNext: { newUser in
-          APIKey.sharedInstance.isAuthentic = true
+          APIKey.sharedInstance.isAuthentic = newUser.hasAuthenticated
           APIKey.sharedInstance.value = key
           try realm.write {
             realm.add(newUser, update: true)

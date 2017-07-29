@@ -73,11 +73,9 @@ class APIKey: TeamworkCredential {
   
   /// Clear all properties of the API Key singleton. Value property will be set to "None".
   static func clear() {
-    let key = APIKey.sharedInstance
-    
-    key.value = "None"
-    key.isAuthentic = false
-    key.uniqueID = 0
+    APIKey.sharedInstance.value = "None"
+    APIKey.sharedInstance.isAuthentic = false
+    APIKey.sharedInstance.uniqueID = 0
   }
 }
 

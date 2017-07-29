@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class ProjectsViewController: UIViewController, BindableType {
 
@@ -27,6 +28,11 @@ class ProjectsViewController: UIViewController, BindableType {
     
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    print("RxSwift Resources: \(RxSwift.Resources.total)")
+    
+  }
   
   //MARK: - Methods
   func bindViewModel() {

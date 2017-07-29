@@ -44,6 +44,14 @@ class SettingsViewController: UIViewController {
     
   }
   
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    print("RxSwift Resources: \(RxSwift.Resources.total)")
+  }
+  
+  
+  
   private func configureView(using user: User) {
     
     firstNameLabel.text = user.firstName

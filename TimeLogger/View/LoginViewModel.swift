@@ -37,8 +37,10 @@ class LoginViewModel {
     
     loginAction.executionObservables
       .flatMap { return $0 }
+      .debug("Authentication Action Response", trimOutput: false)
       .observeOn(MainScheduler.instance)
       .subscribe(onNext: { result in
+        print("DEBUG: Authentication Action output: \(result)")
         guard result else {
           self.helperText.value = "Authentication failed. Please try again."
           self.running.value = false
@@ -49,14 +51,15 @@ class LoginViewModel {
         
         let serialQueue = DispatchQueue(label: "Post-Login")
         serialQueue.sync {
-          sceneCoordinator.pop()
+          _ = sceneCoordinator.pop()
         }
         serialQueue.sync {
-          onSuccessfulLogin.execute()
+          _ = onSuccessfulLogin.execute()
         }
 
       }, onError: { error in
         self.helperText.value = "An error occurred. Please try again."
+        self.running.value = false
         debugPrint(error)
       })
       .disposed(by: disposeBag)
