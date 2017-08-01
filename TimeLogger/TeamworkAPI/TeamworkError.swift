@@ -9,9 +9,13 @@ import Foundation
 
 enum TeamworkError: Error {
   
+  // MARK: - Router
   case routingError(reason: String)
   case keyEncoderError(reason: String)
-  case responseError(error: Error)
+  
+  // MARK: - Response
+  case generalResponseError(String)
+  case responseThrewError(error: Error)
   case responseSerializationError(reason: String)
   
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import RxSwift
 
 class ProjectsViewModel {
   
@@ -16,10 +17,13 @@ class ProjectsViewModel {
   
   
   
-  
   init(sceneCoordinator: SceneCoordinatorType, projectService: ProjectServiceType) {
     self.sceneCoordinator = sceneCoordinator
     self.projectService = projectService
   }
+  
+  
+  
+  
   
 }

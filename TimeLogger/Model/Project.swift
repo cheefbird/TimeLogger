@@ -16,11 +16,11 @@ class Project: Object {
   // MARK: - Properties
   dynamic var isFavorite = false
   dynamic var dateCreated = ""
-  let categories = LinkingObjects(fromType: Category.self, property: "projects")
+  //  dynamic var category: Category?
   dynamic var dateStarted = ""
   dynamic var id = 0
   dynamic var dateEdited = ""
-  let people = LinkingObjects(fromType: Person.self, property: "projects")
+  let people = List<Person>()
   dynamic var company: Company?
   dynamic var name = ""
   dynamic var userIsAdmin = false
@@ -28,9 +28,7 @@ class Project: Object {
   
   // MARK: - Computed Properties
   // (NOT stored in Realm)
-  var category: Category {
-    return categories.first ?? Category(id: 0, name: "None")
-  }
+  
   
   
   // MARK: - Init
@@ -39,11 +37,6 @@ class Project: Object {
     
     isFavorite = json["starred"].boolValue
     dateCreated = json["created-on"].stringValue
-    
-    if let tempCategory = json["category"].dictionaryObject {
-      let categoryJSON = JSON(tempCategory)
-      Category.createAndSave(fromJSON: categoryJSON)
-    }
     
     dateStarted = json["startDate"].stringValue
     
@@ -54,25 +47,33 @@ class Project: Object {
     
     dateEdited = json["last-changed-on"].stringValue
     
-    if let tempArray = json["people"].arrayObject {
-      let peopleArray = tempArray.map { id in
-        return String(describing: id)
+    if let peopleArray = json["people"].arrayObject as? [String] {
+      let peopleIdArray = peopleArray.map { id in
+        return Int(id) ?? 0
       }
       
-      for id in peopleArray {
-        
+      for id in peopleIdArray {
+        people.append(Person(id: id))
       }
     }
     
+    let companyDict = json["company"]
     
+    company = Company(fromJSON: companyDict)
     
+    name = json["name"].stringValue
+    userIsAdmin = json["isProjectAdmin"].boolValue
   }
+  
   
   
   // MARK: - Override
   override static func primaryKey() -> String? {
     return "id"
   }
+  
+  
+  // MARK: - Methods
   
   
 }

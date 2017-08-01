@@ -13,5 +13,11 @@ import RealmSwift
 
 protocol ProjectServiceType: TeamworkService {
   
+  func getAllProjects() -> Observable<[Project]>
+  
+  
+  
+  
+  
   
 }

@@ -16,7 +16,6 @@ class Category: Object {
   // MARK: - Properties
   dynamic var name = ""
   dynamic var id = 0
-  let projects = List<Project>()
   
   
   // MARK: - Init
@@ -46,15 +45,16 @@ class Category: Object {
   
   
   // MARK: - Methods
-  static func createAndSave(fromJSON json: JSON) {
-    
-    let category = Category(fromJSON: json)
-    
-    let realm = try! Realm()
-    try! realm.write {
-      realm.add(category, update: true)
-    }
-  }
+//  static func createAndSave(fromJSON json: JSON) {
+//
+//    let category = Category(fromJSON: json)
+//    category.projects.append(<#T##object: Project##Project#>)
+//
+//    let realm = try! Realm()
+//    try! realm.write {
+//      realm.add(category, update: true)
+//    }
+//  }
   
   
 }

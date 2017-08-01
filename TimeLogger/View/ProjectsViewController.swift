@@ -19,12 +19,15 @@ class ProjectsViewController: UIViewController, BindableType {
   
   // MARK: - Properties
   var viewModel: ProjectsViewModel?
-  var user: User!
   
   
   // MARK: - Default
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    print("ProjectsViewController: ViewDidLoad() called")
+    
+    bindViewModel()
     
   }
   
@@ -36,7 +39,7 @@ class ProjectsViewController: UIViewController, BindableType {
   
   //MARK: - Methods
   func bindViewModel() {
-    
+    print("ProjectsViewController: bindViewModel() called!")
   }
   
 }

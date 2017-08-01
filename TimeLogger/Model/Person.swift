@@ -25,20 +25,20 @@ class Person: Object {
   }
   
   
-  // MARK: - Static Methods
-  static func createAndSave(fromId id: Int) {
-    
-    let newPerson = Person(id: id)
-    
-    let realm = try! Realm()
-    try! realm.write {
-      realm.add(newPerson, update: true)
-    }
-    
+  // MARK: - Default
+  override static func primaryKey() -> String? {
+    return "id"
   }
+  
+  // MARK - Methods
+  
+  
+
+  
   
   
 }
+
 
 
 

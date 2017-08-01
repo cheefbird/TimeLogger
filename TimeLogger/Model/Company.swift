@@ -27,6 +27,16 @@ class Company: Object {
     self.id = id
   }
   
+  convenience init(fromJSON json: JSON) {
+    self.init()
+    name = json["name"].stringValue
+    
+    let idString = json["id"].stringValue
+    if let id = Int(idString) {
+      self.id = id
+    }
+  }
+  
 }
 
 

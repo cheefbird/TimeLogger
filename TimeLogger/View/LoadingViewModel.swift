@@ -55,16 +55,16 @@ class LoadingViewModel {
     
   }
   
-  
-  //  func presentMain() {
-  //
-  //    let projectService = ProjectService()
-  //
-  //    let projectsViewModel = ProjectsViewModel(sceneCoordinator: self.sceneCoordinator, projectService: projectService)
-  //
-  //    sceneCoordinator.transition(to: Scene.projects(projectsViewModel), type: .root)
-  //
-  //  }
+//
+//    func presentMain() {
+//
+//      let projectService = ProjectService()
+//
+//      let projectsViewModel = ProjectsViewModel(sceneCoordinator: self.sceneCoordinator, projectService: projectService)
+//
+//      sceneCoordinator.transition(to: Scene.projects(projectsViewModel), type: .root)
+//
+//    }
   
   
   lazy var tryLogin: Action<String, Bool> = {

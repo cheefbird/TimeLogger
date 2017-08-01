@@ -11,7 +11,6 @@ import UIKit
 class MainTabBarController: UITabBarController, BindableType {
 
   // MARK: - Properties
-  var hasLoaded = false
   var viewModel: TabBarViewModel!
   
   
@@ -19,6 +18,9 @@ class MainTabBarController: UITabBarController, BindableType {
   // MARK: - Default
   override func viewDidLoad() {
     super.viewDidLoad()
+    print("TabBarController -- ViewDidLoad()")
+    
+
     delegate = self
     
   }
@@ -35,19 +37,26 @@ class MainTabBarController: UITabBarController, BindableType {
   }
   
   
-  
-  func configureProjectsTab(projectService: ProjectServiceType) {
+  private func firstTimeSetupIfNeeded() {
     
-    guard selectedIndex == 0,
-      let projectsVC = viewControllers![0] as? ProjectsViewController else {
-        return
-    }
     
-//    let viewModel = ProjectsViewModel(sceneCoordinator: self.sceneCoordinator, projectService: projectService)
-//    
-//    projectsVC.viewModel = viewModel
     
   }
+  
+  
+  
+//  func configureProjectsTab(projectService: ProjectServiceType) {
+//    
+//    guard selectedIndex == 0,
+//      let projectsVC = viewControllers![0] as? ProjectsViewController else {
+//        return
+//    }
+//    
+////    let viewModel = ProjectsViewModel(sceneCoordinator: self.sceneCoordinator, projectService: projectService)
+////    
+////    projectsVC.viewModel = viewModel
+//    
+//  }
   
 }
 
@@ -58,7 +67,15 @@ class MainTabBarController: UITabBarController, BindableType {
 extension MainTabBarController: UITabBarControllerDelegate {
   
   func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-    
+    switch viewController {
+    case is ProjectsViewController:
+      print("tabBarControllerDelegate -- diSelect Called on ProjectsViewController")
+      break
+      
+    default:
+      break
+      
+    }
   }
   
 }
