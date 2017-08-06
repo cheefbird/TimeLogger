@@ -9,6 +9,14 @@
 import Foundation
 import RealmSwift
 import RxSwift
+import RxCocoa
+import Action
+
+
+
+// RxDataSources Section
+
+
 
 class ProjectsViewModel {
   
@@ -23,6 +31,15 @@ class ProjectsViewModel {
   }
   
   
+  var allProjects: Observable<[Project]> {
+    return self.projectService.getAllProjects()
+
+  }
+  
+  
+  
+  
+  // MARK: - Actions
   
   
   

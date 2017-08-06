@@ -8,6 +8,7 @@
 
 import Foundation
 import KeychainAccess
+import RxSwift
 
 
 class APIKey: TeamworkCredential {
@@ -68,7 +69,6 @@ class APIKey: TeamworkCredential {
   }
   
   
-  
   // MARK: - Static Methods
   
   /// Clear all properties of the API Key singleton. Value property will be set to "None".
@@ -78,4 +78,16 @@ class APIKey: TeamworkCredential {
     APIKey.sharedInstance.uniqueID = 0
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 

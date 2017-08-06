@@ -8,9 +8,11 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import RealmSwift
 
 class ProjectsViewController: UIViewController, BindableType {
-
+  
   
   
   // MARK: - Outlets
@@ -18,7 +20,9 @@ class ProjectsViewController: UIViewController, BindableType {
   
   
   // MARK: - Properties
-  var viewModel: ProjectsViewModel?
+  var viewModel: ProjectsViewModel!
+  
+  let disposeBag = DisposeBag()
   
   
   // MARK: - Default
@@ -27,7 +31,7 @@ class ProjectsViewController: UIViewController, BindableType {
     
     print("ProjectsViewController: ViewDidLoad() called")
     
-    bindViewModel()
+    
     
   }
   
@@ -39,7 +43,7 @@ class ProjectsViewController: UIViewController, BindableType {
   
   //MARK: - Methods
   func bindViewModel() {
-    print("ProjectsViewController: bindViewModel() called!")
+    
   }
   
 }
@@ -48,13 +52,22 @@ class ProjectsViewController: UIViewController, BindableType {
 extension ProjectsViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 2
+    return 5
   }
   
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-    return cell
+    
+    // Dummy cell
+    return UITableViewCell()
+    
+    //    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+    //    cell.textLabel?.text = projects[indexPath.row].name
+    //    cell.detailTextLabel?.text = projects[indexPath.row].dateCreated
+    //    cell.accessoryType = .disclosureIndicator
+    //
+    //    return cell
+    
   }
 }
 
