@@ -14,6 +14,7 @@ target 'TimeLogger' do
   pod 'KeychainAccess'
   pod 'RealmSwift', :inhibit_warnings => true
   pod 'Action'
+  pod 'RxDataSources'
   
   
   target 'TimeLoggerTests' do
