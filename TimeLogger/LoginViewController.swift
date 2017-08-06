@@ -51,16 +51,27 @@ class LoginViewController: UIViewController, BindableType {
   func bindViewModel() {
     
     viewModel.helperText.asDriver()
-      .do(onNext: { text in
+      .do(onNext: { [weak self] text in
         if text.contains("fail") {
-          self.statusLabel.textColor = UIColor.red
+          self?.statusLabel.textColor = UIColor.red
         } else {
-          self.statusLabel.textColor = UIColor.lightBlack
+          self?.statusLabel.textColor = UIColor.lightBlack
         }
       })
       .debug("Login Helper Text", trimOutput: false)
       .drive(statusLabel.rx.text)
       .disposed(by: disposeBag)
+    
+//    
+//    
+//    viewModel.loginAction.executionObservables
+//      .flatMap { $0 }
+//      .observeOn(MainScheduler.instance)
+//      .subscribe(onNext: { [weak self] result in
+//        guard result else {
+//          self?.viewModel.
+//        }
+//      })
     
     
     viewModel.running.asDriver()

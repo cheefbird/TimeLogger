@@ -16,7 +16,6 @@ class LoginViewModel {
   let authenticationService: AuthenticationServiceType
   
   let loginAction: Action<String, Bool>
-  let onSuccessfulLogin: CocoaAction
   
   let helperText = Variable<String>("Enter your Teamwork API key to login.")
   let running = Variable<Bool>(false)
@@ -27,43 +26,43 @@ class LoginViewModel {
   
   init(sceneCoordinator: SceneCoordinatorType,
        authService: AuthenticationServiceType,
-       loginAction: Action<String, Bool>,
-       onSuccessfulLogin: CocoaAction) {
-
+       loginAction: Action<String, Bool>) {
+    
     self.sceneCoordinator = sceneCoordinator
     self.authenticationService = authService
     self.loginAction = loginAction
-    self.onSuccessfulLogin = onSuccessfulLogin
     
     loginAction.executionObservables
       .flatMap { return $0 }
-      .debug("Authentication Action Response", trimOutput: false)
+      .debug("tryLogin Action OUTPUT", trimOutput: false)
       .observeOn(MainScheduler.instance)
-      .subscribe(onNext: { result in
-        print("DEBUG: Authentication Action output: \(result)")
+      .subscribe(onNext: { [weak self] result in
         guard result else {
-          self.helperText.value = "Authentication failed. Please try again."
-          self.running.value = false
+          self?.helperText.value = "Authentication failed. Please try again."
+          self?.running.value = false
           return
         }
         
-        self.helperText.value = "Login successful! Preparing your data ..."
+        self?.helperText.value = "Login successful! Preparing your data ..."
         
-        let serialQueue = DispatchQueue(label: "Post-Login")
-        serialQueue.sync {
-          _ = sceneCoordinator.pop()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+          self?.sceneCoordinator.transition(to: Scene.mainTabBar(), type: .presentTabBar(andSelectIndex: 0))
         }
-        serialQueue.sync {
-          _ = onSuccessfulLogin.execute()
-        }
-
-      }, onError: { error in
-        self.helperText.value = "An error occurred. Please try again."
-        self.running.value = false
-        debugPrint(error)
+        
+        }, onError: { [weak self] error in
+          self?.helperText.value = "An error occurred. Please try again."
+          self?.running.value = false
+          debugPrint(error)
+        }, onDisposed: {
+          print("TRYLOGIN ACTION DISPOSED **********")
       })
       .disposed(by: disposeBag)
     
+  }
+  
+  
+  deinit {
+    print("** LOGIN VM Deinitialized **")
   }
   
 }

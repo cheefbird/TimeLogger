@@ -20,16 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let authService = AuthenticationService()
     let sceneCoordinator = SceneCoordinator(window: window!)
     
-    print("APIKey info:")
-    print("Key: " + APIKey.sharedInstance.value)
-    print("ID: \(APIKey.sharedInstance.uniqueID)")
-    print("Auth status: \(APIKey.sharedInstance.isAuthentic)")
-    
     let loadingViewModel = LoadingViewModel(coordinator: sceneCoordinator, authService: authService)
     
-    let firstScene = Scene.loading(loadingViewModel)
-    
-    sceneCoordinator.transition(to: firstScene, type: .root)
+    sceneCoordinator.transition(to: Scene.loading(loadingViewModel), type: .root)
     
     return true
   }

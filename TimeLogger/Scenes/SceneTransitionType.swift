@@ -12,8 +12,10 @@ import Foundation
 /// Enum for each possible type of navigation action (i.e. push, pop, set as root)
 enum SceneTransitionType {
   
-  case root         // make view the app's root view
-  case push         // push view to navigation stack
-  case modal        // present view modally
+  case root                                 // make view the app's ROOT view
+//  case present                            // simple present function
+  case presentTabBar(andSelectIndex: Int)   // special present for TAB BAR only
+  case push                                 // push view to NAVIGATION stack
+  case modal                                // present view MODALLY
   
 }

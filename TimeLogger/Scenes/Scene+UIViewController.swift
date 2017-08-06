@@ -25,14 +25,10 @@ extension Scene {
       viewController.bindViewModel(using: viewModel)
       return viewController
       
-    case .mainTabBar(_):
+    case .mainTabBar():
       let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
       
-      tabBarController.selectedIndex = 0
-      
-      
       return tabBarController
-      
     }
   }
 }

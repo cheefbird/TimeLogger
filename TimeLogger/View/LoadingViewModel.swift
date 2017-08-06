@@ -28,9 +28,6 @@ class LoadingViewModel {
   init(coordinator: SceneCoordinatorType, authService: AuthenticationServiceType) {
     sceneCoordinator = coordinator
     authenticationService = authService
-    
-    print("LoadingVM Initialized: sceneCoord: \(self.sceneCoordinator), authServ: \(self.authenticationService)")
-    
   }
   
   
@@ -39,53 +36,54 @@ class LoadingViewModel {
     return .just(APIKey.sharedInstance.isAuthentic)
   }
   
+  
   // MARK: - Methods
-  
-  
+
   
   func presentLogin() {
     
     let loginViewModel = LoginViewModel(
       sceneCoordinator: self.sceneCoordinator,
       authService: self.authenticationService,
-      loginAction: tryLogin,
-      onSuccessfulLogin: loginSuccessful)
+      loginAction: tryLogin)
     
     sceneCoordinator.transition(to: Scene.login(loginViewModel), type: .modal)
     
   }
   
-//
-//    func presentMain() {
-//
-//      let projectService = ProjectService()
-//
-//      let projectsViewModel = ProjectsViewModel(sceneCoordinator: self.sceneCoordinator, projectService: projectService)
-//
-//      sceneCoordinator.transition(to: Scene.projects(projectsViewModel), type: .root)
-//
-//    }
   
   
-  lazy var tryLogin: Action<String, Bool> = {
+  /// Lazily loaded Action for attempting to login using the provided key string. Output is a Bool representing request success.
+  lazy var tryLogin: Action<String, Bool> = { this in
     return Action { input in
-      return self.authenticationService.authenticateUser(withKey: input)
+      return this.authenticationService.authenticateUser(withKey: input)
         .catchErrorJustReturn(User())
         .map { $0.hasAuthenticated }
-      
-    }
-  }()
-  
-  
-  
-  lazy var loginSuccessful: CocoaAction = { this in
-    return CocoaAction { _ in
-      let tabBarViewModel = TabBarViewModel(sceneCoordinator: this.sceneCoordinator)
-      
-      return self.sceneCoordinator.transition(to: Scene.mainTabBar(tabBarViewModel), type: .root)
-
     }
   }(self)
+  
+  
+  
+  /// Lazily loaded CocoaAction that handles Scene transition after successful login.
+  lazy var loginSuccessful: CocoaAction = { this in
+    return CocoaAction { _ in
+      print("loginSuccessful Action THIS: \(this)")
+      
+
+      return this.sceneCoordinator.transition(to: Scene.mainTabBar(), type: .presentTabBar(andSelectIndex: 0))
+    }
+  }(self)
+  
+//  var newLoginSuccess: CocoaAction {
+//    return CocoaAction { _ in
+//
+//    }
+//  }
+  
+  
+  deinit {
+    print("** LOADING VM Deinitialized ******")
+  }
   
 }
 

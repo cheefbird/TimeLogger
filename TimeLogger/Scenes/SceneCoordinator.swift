@@ -15,7 +15,11 @@ class SceneCoordinator: SceneCoordinatorType {
   
   
   fileprivate var window: UIWindow
-  fileprivate var currentViewController: UIViewController
+  fileprivate var currentViewController: UIViewController {
+    didSet {
+      print("*Current*View*Controller has been set to \(self.currentViewController)")
+    }
+  }
   
   
   
@@ -28,8 +32,10 @@ class SceneCoordinator: SceneCoordinatorType {
   
   static func actualViewController(for viewController: UIViewController) -> UIViewController {
     
-    if let tabController = viewController as? UITabBarController {
+    if let tabController = viewController as? MainTabBarController {
       return tabController.selectedViewController!
+    } else if let navController = viewController as? UINavigationController {
+      return navController.viewControllers.first!
     } else {
       return viewController
     }
@@ -58,12 +64,23 @@ class SceneCoordinator: SceneCoordinatorType {
         options: .transitionFlipFromRight,
         animations: { [weak self] in
           self?.window.rootViewController = viewController
-          },
+        },
         completion: { completed in
           guard completed else { return }
           subject.onCompleted()
       })
-
+      
+    case .presentTabBar(let index):
+      guard let tabController = viewController as? MainTabBarController
+        else {
+          fatalError("Can't call transition type presentTabBar for non-tabBarControllers!")
+      }
+      
+      tabController.selectedIndex = index
+      
+      currentViewController.present(tabController, animated: true) {
+        self.currentViewController = SceneCoordinator.actualViewController(for: viewController)
+      }
       
       
     case .push:
@@ -134,13 +151,13 @@ class SceneCoordinator: SceneCoordinatorType {
   
   
   
-//  @discardableResult
-//  func showMainTabBar() -> Observable<Void> {
-//    let subject = PublishSubject<Void>()
-//    
-//    
-//    
-//  }
+  //  @discardableResult
+  //  func showMainTabBar() -> Observable<Void> {
+  //    let subject = PublishSubject<Void>()
+  //
+  //
+  //
+  //  }
   
 }
 

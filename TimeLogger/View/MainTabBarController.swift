@@ -8,11 +8,9 @@
 
 import UIKit
 
-class MainTabBarController: UITabBarController, BindableType {
+class MainTabBarController: UITabBarController {
 
-  // MARK: - Properties
-  var viewModel: TabBarViewModel!
-  
+  // MARK: - Properties  
   
   
   // MARK: - Default
@@ -32,16 +30,7 @@ class MainTabBarController: UITabBarController, BindableType {
   
   
   // MARK: - Methods
-  func bindViewModel() {
-    
-  }
-  
-  
-  private func firstTimeSetupIfNeeded() {
-    
-    
-    
-  }
+
   
   
   

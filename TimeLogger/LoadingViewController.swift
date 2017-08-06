@@ -36,6 +36,7 @@ class LoadingViewController: UIViewController, BindableType {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    print("Loading view about to APPEAR")
     print("RxSwift Resources: \(RxSwift.Resources.total)")
   }
   
@@ -57,19 +58,17 @@ class LoadingViewController: UIViewController, BindableType {
     viewModel.authStatus
       .subscribeOn(MainScheduler.instance)
       .delaySubscription(navigationDelayTime, scheduler: MainScheduler.instance)
-      .subscribe(onNext: { status in
+      .subscribe(onNext: { [weak self] status in
         print("Authentication status: \(status)")
         guard status else {
-          self.viewModel.presentLogin()
+          self?.viewModel.presentLogin()
           return
         }
-        guard self.presentedViewController == nil else {
+        guard self?.presentedViewController == nil else {
           print("ALERT: LoadingViewController's presented VC wasn't nil -- couldn't try loading tab")
           return
         }
-        print("ALERT ** TRYING TO LOAD TAB BAR FROM LoadingViewController ** ALERT")
-        self.viewModel.loginSuccessful.execute()
-//        self.viewModel.presentMain()
+        self?.viewModel.loginSuccessful.execute()
       })
       .disposed(by: disposeBag)
     
