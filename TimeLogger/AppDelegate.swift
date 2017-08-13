@@ -13,21 +13,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   
-  var authenticationService: AuthenticationService!
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
+    
+    
     let authService = AuthenticationService()
+    let projectService = ProjectService()
     let sceneCoordinator = SceneCoordinator(window: window!)
     
-    print("APIKey info:")
-    print("Key: " + APIKey.sharedInstance.value)
-    print("ID: \(APIKey.sharedInstance.uniqueID)")
-    print("Auth status: \(APIKey.sharedInstance.isAuthentic)")
+//    let loadingViewModel = LoadingViewModel(coordinator: sceneCoordinator, authService: authService)
+    let projectsViewModel = ProjectsViewModel(
+      sceneCoordinator: sceneCoordinator,
+      projectService: projectService,
+      authenticationService: authService)
     
-    let loadingViewModel = LoadingViewModel(coordinator: sceneCoordinator, authService: authService)
-    
-    let firstScene = Scene.loading(loadingViewModel)
+    let firstScene = Scene.fistTabBarLoad(projectsViewModel)
     
     sceneCoordinator.transition(to: firstScene, type: .root)
     

@@ -14,6 +14,7 @@ enum Scene {
   case loading(LoadingViewModel)
   case login(LoginViewModel)
   case mainTabBar(TabBarViewModel)
+  case fistTabBarLoad(ProjectsViewModel)
   
 }
 

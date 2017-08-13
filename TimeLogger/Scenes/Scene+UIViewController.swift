@@ -25,13 +25,21 @@ extension Scene {
       viewController.bindViewModel(using: viewModel)
       return viewController
       
-    case .mainTabBar(let viewModel):
-      var tabBarController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
+    case .mainTabBar(_):
+      let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
       
       tabBarController.selectedIndex = 0
       
       
       return tabBarController
+      
+    case .fistTabBarLoad(let viewModel):
+      let tabController = mainStoryboard.instantiateViewController(withIdentifier: "MainTabBarConroller") as! UITabBarController
+      var projectsViewController = tabController.selectedViewController?.navigationController?.viewControllers.first as! ProjectsViewController
+      
+      projectsViewController.bindViewModel(using: viewModel)
+      
+      return projectsViewController
       
     }
   }

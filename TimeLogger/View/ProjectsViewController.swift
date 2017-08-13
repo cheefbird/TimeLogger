@@ -25,6 +25,7 @@ class ProjectsViewController: UIViewController, BindableType {
   // MARK: - Default
   override func viewDidLoad() {
     super.viewDidLoad()
+    debugPrint("SceneCoordinator.currentVC)")
     
   }
   

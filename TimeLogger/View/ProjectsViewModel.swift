@@ -13,13 +13,13 @@ class ProjectsViewModel {
   
   let sceneCoordinator: SceneCoordinatorType
   let projectService: ProjectServiceType
+  let authenticationService: AuthenticationServiceType
   
   
-  
-  
-  init(sceneCoordinator: SceneCoordinatorType, projectService: ProjectServiceType) {
+  init(sceneCoordinator: SceneCoordinatorType, projectService: ProjectServiceType, authenticationService: AuthenticationServiceType) {
     self.sceneCoordinator = sceneCoordinator
     self.projectService = projectService
+    self.authenticationService = authenticationService
   }
   
 }
